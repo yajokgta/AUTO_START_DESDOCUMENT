@@ -5,9 +5,12 @@ using System.Configuration;
 using System.Data;
 using System.Globalization;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
+using WolfApprove.Model;
 using WolfApprove.Model.CustomClass;
+using static WolfApprove.Model.CustomClass.CustomJsonAdvanceForm;
 
 namespace AUTO_START_DESDOCUMENT.Services
 {
@@ -61,19 +64,28 @@ namespace AUTO_START_DESDOCUMENT.Services
             }
             ValueInMadvanceList = ValueInMadvanceList.OrderBy(x => x.EffectiveDate).ToList();
             var ValueInMadvanceListLast = ValueInMadvanceList.Last();
-            /*int StorageperiodInt = Convert.ToInt32(ValueInMadvanceListLast.Storageperiod);*/
-            int StorageperiodInt = 1;
+            int StorageperiodInt = Convert.ToInt32(ValueInMadvanceListLast.Storageperiod);
+            /*int StorageperiodInt = 1;*/
+            int daysInOneYear = 365;
+            int TotalDay = StorageperiodInt * daysInOneYear;
             DateTime dt = DateTime.ParseExact(ValueInMadvanceListLast.EffectiveDate.ToString("dd/MM/yyyy"), "dd/MM/yyyy", null);
-            DateTime DatimeTotal =  dt.AddYears(-StorageperiodInt);
+            /*DateTime DatimeTotal =  dt.AddYears(-StorageperiodInt);*/
             var TempleteDest = db.MSTTemplates.Where(x => x.DocumentCode == documentcode && x.IsActive == true).ToList();
             var TempleteDestLast = TempleteDest.Last();
-            var TrnmemoDest = db.TRNMemos.Where(x => x.TemplateId == TempleteDestLast.TemplateId && x.StatusName.ToLower() == "completed" && x.ModifiedDate >= DatimeTotal).ToList();
+            var TrnmemoDest = db.TRNMemos.Where(x => x.TemplateId == TempleteDestLast.TemplateId && x.StatusName.ToLower() == "completed").ToList();
             TrnmemoDest.OrderBy(x=> x.ModifiedDate).ToList();
+
+            List<TRNMemo> ObjTrnmemos = TrnmemoDest.Where(obj =>
+            {
+                TimeSpan difference = (TimeSpan)(obj.ModifiedDate - dt);
+                return difference.TotalDays >= TotalDay;
+            }).ToList();
+
             var emplist = db.ViewEmployees.Where(x => x.Email == EmailCreater).ToList();
             var EmployeeMaster = emplist.FirstOrDefault();
             List<DataListTRNMemo> ListToTable = new List<DataListTRNMemo>();
             var lstCompany = db.MSTCompanies.ToList();
-            foreach (var objtrnmemodest in TrnmemoDest)
+            foreach (var objtrnmemodest in ObjTrnmemos)
             {
                 var GetDocumentCodeByTempID = db.MSTTemplates.Where(x => x.TemplateId == objtrnmemodest.TemplateId && x.IsActive == true).ToList().FirstOrDefault();
                 DataListTRNMemo GetValueToTable = new DataListTRNMemo();
