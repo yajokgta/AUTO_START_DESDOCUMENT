@@ -462,6 +462,70 @@ namespace AUTO_START_DESDOCUMENT
 				return this.GetTable<TRNUserParticipate>();
 			}
 		}
+		
+		public System.Data.Linq.Table<ViewEmployee> ViewEmployees
+		{
+			get
+			{
+				return this.GetTable<ViewEmployee>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ViewPosition> ViewPositions
+		{
+			get
+			{
+				return this.GetTable<ViewPosition>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ViewDelegate> ViewDelegates
+		{
+			get
+			{
+				return this.GetTable<ViewDelegate>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ViewMasterApproveType> ViewMasterApproveTypes
+		{
+			get
+			{
+				return this.GetTable<ViewMasterApproveType>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ViewReleasedDocument> ViewReleasedDocuments
+		{
+			get
+			{
+				return this.GetTable<ViewReleasedDocument>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ViewReport> ViewReports
+		{
+			get
+			{
+				return this.GetTable<ViewReport>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ViewRole> ViewRoles
+		{
+			get
+			{
+				return this.GetTable<ViewRole>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ViewRolePermission> ViewRolePermissions
+		{
+			get
+			{
+				return this.GetTable<ViewRolePermission>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MSTAccount")]
@@ -14966,6 +15030,4704 @@ namespace AUTO_START_DESDOCUMENT
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ViewEmployee")]
+	public partial class ViewEmployee
+	{
+		
+		private int _EmployeeId;
+		
+		private string _EmployeeCode;
+		
+		private string _Username;
+		
+		private string _NameTh;
+		
+		private string _NameEn;
+		
+		private string _Email;
+		
+		private System.Nullable<bool> _IsActive;
+		
+		private System.Nullable<int> _PositionId;
+		
+		private string _PositionNameTh;
+		
+		private string _PositionNameEn;
+		
+		private System.Nullable<int> _DepartmentId;
+		
+		private string _DepartmentNameTh;
+		
+		private string _DepartmentNameEn;
+		
+		private string _SignPicPath;
+		
+		private string _Lang;
+		
+		private System.Nullable<int> _AccountId;
+		
+		private string _AccountCode;
+		
+		private string _AccountName;
+		
+		private string _DefaultLang;
+		
+		private System.Nullable<System.DateTime> _RegisteredDate;
+		
+		private System.Nullable<System.DateTime> _ExpiredDate;
+		
+		private System.Nullable<System.DateTime> _CreatedDate;
+		
+		private string _CreatedBy;
+		
+		private System.Nullable<System.DateTime> _ModifiedDate;
+		
+		private string _ModifiedBy;
+		
+		private string _ReportToEmpCode;
+		
+		private System.Nullable<int> _DivisionId;
+		
+		private string _DivisionNameTh;
+		
+		private string _DivisionNameEn;
+		
+		private string _ADTitle;
+		
+		public ViewEmployee()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeId", DbType="Int NOT NULL")]
+		public int EmployeeId
+		{
+			get
+			{
+				return this._EmployeeId;
+			}
+			set
+			{
+				if ((this._EmployeeId != value))
+				{
+					this._EmployeeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeCode", DbType="NVarChar(10)")]
+		public string EmployeeCode
+		{
+			get
+			{
+				return this._EmployeeCode;
+			}
+			set
+			{
+				if ((this._EmployeeCode != value))
+				{
+					this._EmployeeCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Username", DbType="NVarChar(50)")]
+		public string Username
+		{
+			get
+			{
+				return this._Username;
+			}
+			set
+			{
+				if ((this._Username != value))
+				{
+					this._Username = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NameTh", DbType="NVarChar(500)")]
+		public string NameTh
+		{
+			get
+			{
+				return this._NameTh;
+			}
+			set
+			{
+				if ((this._NameTh != value))
+				{
+					this._NameTh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NameEn", DbType="NVarChar(500)")]
+		public string NameEn
+		{
+			get
+			{
+				return this._NameEn;
+			}
+			set
+			{
+				if ((this._NameEn != value))
+				{
+					this._NameEn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NVarChar(100)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this._Email = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsActive", DbType="Bit")]
+		public System.Nullable<bool> IsActive
+		{
+			get
+			{
+				return this._IsActive;
+			}
+			set
+			{
+				if ((this._IsActive != value))
+				{
+					this._IsActive = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PositionId", DbType="Int")]
+		public System.Nullable<int> PositionId
+		{
+			get
+			{
+				return this._PositionId;
+			}
+			set
+			{
+				if ((this._PositionId != value))
+				{
+					this._PositionId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PositionNameTh", DbType="NVarChar(500)")]
+		public string PositionNameTh
+		{
+			get
+			{
+				return this._PositionNameTh;
+			}
+			set
+			{
+				if ((this._PositionNameTh != value))
+				{
+					this._PositionNameTh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PositionNameEn", DbType="NVarChar(500)")]
+		public string PositionNameEn
+		{
+			get
+			{
+				return this._PositionNameEn;
+			}
+			set
+			{
+				if ((this._PositionNameEn != value))
+				{
+					this._PositionNameEn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DepartmentId", DbType="Int")]
+		public System.Nullable<int> DepartmentId
+		{
+			get
+			{
+				return this._DepartmentId;
+			}
+			set
+			{
+				if ((this._DepartmentId != value))
+				{
+					this._DepartmentId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DepartmentNameTh", DbType="NVarChar(500)")]
+		public string DepartmentNameTh
+		{
+			get
+			{
+				return this._DepartmentNameTh;
+			}
+			set
+			{
+				if ((this._DepartmentNameTh != value))
+				{
+					this._DepartmentNameTh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DepartmentNameEn", DbType="NVarChar(500)")]
+		public string DepartmentNameEn
+		{
+			get
+			{
+				return this._DepartmentNameEn;
+			}
+			set
+			{
+				if ((this._DepartmentNameEn != value))
+				{
+					this._DepartmentNameEn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SignPicPath", DbType="NVarChar(MAX)")]
+		public string SignPicPath
+		{
+			get
+			{
+				return this._SignPicPath;
+			}
+			set
+			{
+				if ((this._SignPicPath != value))
+				{
+					this._SignPicPath = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lang", DbType="NVarChar(2)")]
+		public string Lang
+		{
+			get
+			{
+				return this._Lang;
+			}
+			set
+			{
+				if ((this._Lang != value))
+				{
+					this._Lang = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountId", DbType="Int")]
+		public System.Nullable<int> AccountId
+		{
+			get
+			{
+				return this._AccountId;
+			}
+			set
+			{
+				if ((this._AccountId != value))
+				{
+					this._AccountId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountCode", DbType="NVarChar(10)")]
+		public string AccountCode
+		{
+			get
+			{
+				return this._AccountCode;
+			}
+			set
+			{
+				if ((this._AccountCode != value))
+				{
+					this._AccountCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountName", DbType="NVarChar(250)")]
+		public string AccountName
+		{
+			get
+			{
+				return this._AccountName;
+			}
+			set
+			{
+				if ((this._AccountName != value))
+				{
+					this._AccountName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DefaultLang", DbType="NVarChar(2)")]
+		public string DefaultLang
+		{
+			get
+			{
+				return this._DefaultLang;
+			}
+			set
+			{
+				if ((this._DefaultLang != value))
+				{
+					this._DefaultLang = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RegisteredDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> RegisteredDate
+		{
+			get
+			{
+				return this._RegisteredDate;
+			}
+			set
+			{
+				if ((this._RegisteredDate != value))
+				{
+					this._RegisteredDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExpiredDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ExpiredDate
+		{
+			get
+			{
+				return this._ExpiredDate;
+			}
+			set
+			{
+				if ((this._ExpiredDate != value))
+				{
+					this._ExpiredDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CreatedDate
+		{
+			get
+			{
+				return this._CreatedDate;
+			}
+			set
+			{
+				if ((this._CreatedDate != value))
+				{
+					this._CreatedDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedBy", DbType="NVarChar(500)")]
+		public string CreatedBy
+		{
+			get
+			{
+				return this._CreatedBy;
+			}
+			set
+			{
+				if ((this._CreatedBy != value))
+				{
+					this._CreatedBy = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModifiedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ModifiedDate
+		{
+			get
+			{
+				return this._ModifiedDate;
+			}
+			set
+			{
+				if ((this._ModifiedDate != value))
+				{
+					this._ModifiedDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModifiedBy", DbType="NVarChar(500)")]
+		public string ModifiedBy
+		{
+			get
+			{
+				return this._ModifiedBy;
+			}
+			set
+			{
+				if ((this._ModifiedBy != value))
+				{
+					this._ModifiedBy = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReportToEmpCode", DbType="NVarChar(10)")]
+		public string ReportToEmpCode
+		{
+			get
+			{
+				return this._ReportToEmpCode;
+			}
+			set
+			{
+				if ((this._ReportToEmpCode != value))
+				{
+					this._ReportToEmpCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DivisionId", DbType="Int")]
+		public System.Nullable<int> DivisionId
+		{
+			get
+			{
+				return this._DivisionId;
+			}
+			set
+			{
+				if ((this._DivisionId != value))
+				{
+					this._DivisionId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DivisionNameTh", DbType="NVarChar(500)")]
+		public string DivisionNameTh
+		{
+			get
+			{
+				return this._DivisionNameTh;
+			}
+			set
+			{
+				if ((this._DivisionNameTh != value))
+				{
+					this._DivisionNameTh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DivisionNameEn", DbType="NVarChar(500)")]
+		public string DivisionNameEn
+		{
+			get
+			{
+				return this._DivisionNameEn;
+			}
+			set
+			{
+				if ((this._DivisionNameEn != value))
+				{
+					this._DivisionNameEn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ADTitle", DbType="NVarChar(500)")]
+		public string ADTitle
+		{
+			get
+			{
+				return this._ADTitle;
+			}
+			set
+			{
+				if ((this._ADTitle != value))
+				{
+					this._ADTitle = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ViewPosition")]
+	public partial class ViewPosition
+	{
+		
+		private int _PositionId;
+		
+		private string _NameTh;
+		
+		private string _NameEn;
+		
+		private System.Nullable<int> _PositionLevelId;
+		
+		private System.Nullable<bool> _IsActive;
+		
+		private string _CreatedBy;
+		
+		private System.Nullable<System.DateTime> _CreatedDate;
+		
+		private string _ModifiedBy;
+		
+		private System.Nullable<System.DateTime> _ModifiedDate;
+		
+		private System.Nullable<int> _AccountId;
+		
+		private string _PositionLevelNameTh;
+		
+		private string _PositionLevelNameEn;
+		
+		private System.Nullable<int> _PosotionLevel;
+		
+		public ViewPosition()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PositionId", DbType="Int NOT NULL")]
+		public int PositionId
+		{
+			get
+			{
+				return this._PositionId;
+			}
+			set
+			{
+				if ((this._PositionId != value))
+				{
+					this._PositionId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NameTh", DbType="NVarChar(500)")]
+		public string NameTh
+		{
+			get
+			{
+				return this._NameTh;
+			}
+			set
+			{
+				if ((this._NameTh != value))
+				{
+					this._NameTh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NameEn", DbType="NVarChar(500)")]
+		public string NameEn
+		{
+			get
+			{
+				return this._NameEn;
+			}
+			set
+			{
+				if ((this._NameEn != value))
+				{
+					this._NameEn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PositionLevelId", DbType="Int")]
+		public System.Nullable<int> PositionLevelId
+		{
+			get
+			{
+				return this._PositionLevelId;
+			}
+			set
+			{
+				if ((this._PositionLevelId != value))
+				{
+					this._PositionLevelId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsActive", DbType="Bit")]
+		public System.Nullable<bool> IsActive
+		{
+			get
+			{
+				return this._IsActive;
+			}
+			set
+			{
+				if ((this._IsActive != value))
+				{
+					this._IsActive = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedBy", DbType="NVarChar(500)")]
+		public string CreatedBy
+		{
+			get
+			{
+				return this._CreatedBy;
+			}
+			set
+			{
+				if ((this._CreatedBy != value))
+				{
+					this._CreatedBy = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CreatedDate
+		{
+			get
+			{
+				return this._CreatedDate;
+			}
+			set
+			{
+				if ((this._CreatedDate != value))
+				{
+					this._CreatedDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModifiedBy", DbType="NVarChar(500)")]
+		public string ModifiedBy
+		{
+			get
+			{
+				return this._ModifiedBy;
+			}
+			set
+			{
+				if ((this._ModifiedBy != value))
+				{
+					this._ModifiedBy = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModifiedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ModifiedDate
+		{
+			get
+			{
+				return this._ModifiedDate;
+			}
+			set
+			{
+				if ((this._ModifiedDate != value))
+				{
+					this._ModifiedDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountId", DbType="Int")]
+		public System.Nullable<int> AccountId
+		{
+			get
+			{
+				return this._AccountId;
+			}
+			set
+			{
+				if ((this._AccountId != value))
+				{
+					this._AccountId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PositionLevelNameTh", DbType="NChar(500)")]
+		public string PositionLevelNameTh
+		{
+			get
+			{
+				return this._PositionLevelNameTh;
+			}
+			set
+			{
+				if ((this._PositionLevelNameTh != value))
+				{
+					this._PositionLevelNameTh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PositionLevelNameEn", DbType="NChar(500)")]
+		public string PositionLevelNameEn
+		{
+			get
+			{
+				return this._PositionLevelNameEn;
+			}
+			set
+			{
+				if ((this._PositionLevelNameEn != value))
+				{
+					this._PositionLevelNameEn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PosotionLevel", DbType="Int")]
+		public System.Nullable<int> PosotionLevel
+		{
+			get
+			{
+				return this._PosotionLevel;
+			}
+			set
+			{
+				if ((this._PosotionLevel != value))
+				{
+					this._PosotionLevel = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ViewDelegate")]
+	public partial class ViewDelegate
+	{
+		
+		private int _DelegateId;
+		
+		private System.Nullable<int> _ApproverId;
+		
+		private System.Nullable<int> _AssignedId;
+		
+		private System.Nullable<System.DateTime> _DateFrom;
+		
+		private System.Nullable<System.DateTime> _DateTo;
+		
+		private string _Remark;
+		
+		private System.Nullable<System.DateTime> _CreatedDate;
+		
+		private System.Nullable<System.DateTime> _ModifiedDate;
+		
+		private System.Nullable<int> _AccountId;
+		
+		private string _Template;
+		
+		private string _CreatedBy;
+		
+		private string _ModifiedBy;
+		
+		public ViewDelegate()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DelegateId", DbType="Int NOT NULL")]
+		public int DelegateId
+		{
+			get
+			{
+				return this._DelegateId;
+			}
+			set
+			{
+				if ((this._DelegateId != value))
+				{
+					this._DelegateId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ApproverId", DbType="Int")]
+		public System.Nullable<int> ApproverId
+		{
+			get
+			{
+				return this._ApproverId;
+			}
+			set
+			{
+				if ((this._ApproverId != value))
+				{
+					this._ApproverId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AssignedId", DbType="Int")]
+		public System.Nullable<int> AssignedId
+		{
+			get
+			{
+				return this._AssignedId;
+			}
+			set
+			{
+				if ((this._AssignedId != value))
+				{
+					this._AssignedId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateFrom", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateFrom
+		{
+			get
+			{
+				return this._DateFrom;
+			}
+			set
+			{
+				if ((this._DateFrom != value))
+				{
+					this._DateFrom = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateTo", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateTo
+		{
+			get
+			{
+				return this._DateTo;
+			}
+			set
+			{
+				if ((this._DateTo != value))
+				{
+					this._DateTo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Remark", DbType="NText", UpdateCheck=UpdateCheck.Never)]
+		public string Remark
+		{
+			get
+			{
+				return this._Remark;
+			}
+			set
+			{
+				if ((this._Remark != value))
+				{
+					this._Remark = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CreatedDate
+		{
+			get
+			{
+				return this._CreatedDate;
+			}
+			set
+			{
+				if ((this._CreatedDate != value))
+				{
+					this._CreatedDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModifiedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ModifiedDate
+		{
+			get
+			{
+				return this._ModifiedDate;
+			}
+			set
+			{
+				if ((this._ModifiedDate != value))
+				{
+					this._ModifiedDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountId", DbType="Int")]
+		public System.Nullable<int> AccountId
+		{
+			get
+			{
+				return this._AccountId;
+			}
+			set
+			{
+				if ((this._AccountId != value))
+				{
+					this._AccountId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Template", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
+		public string Template
+		{
+			get
+			{
+				return this._Template;
+			}
+			set
+			{
+				if ((this._Template != value))
+				{
+					this._Template = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedBy", DbType="NVarChar(500)")]
+		public string CreatedBy
+		{
+			get
+			{
+				return this._CreatedBy;
+			}
+			set
+			{
+				if ((this._CreatedBy != value))
+				{
+					this._CreatedBy = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModifiedBy", DbType="NVarChar(500)")]
+		public string ModifiedBy
+		{
+			get
+			{
+				return this._ModifiedBy;
+			}
+			set
+			{
+				if ((this._ModifiedBy != value))
+				{
+					this._ModifiedBy = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ViewMasterApproveType")]
+	public partial class ViewMasterApproveType
+	{
+		
+		private string _Value3;
+		
+		private System.Nullable<int> _TemplateId;
+		
+		public ViewMasterApproveType()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Value3", DbType="NVarChar(500)")]
+		public string Value3
+		{
+			get
+			{
+				return this._Value3;
+			}
+			set
+			{
+				if ((this._Value3 != value))
+				{
+					this._Value3 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TemplateId", DbType="Int")]
+		public System.Nullable<int> TemplateId
+		{
+			get
+			{
+				return this._TemplateId;
+			}
+			set
+			{
+				if ((this._TemplateId != value))
+				{
+					this._TemplateId = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ViewReleasedDocuments")]
+	public partial class ViewReleasedDocument
+	{
+		
+		private int _ReleasedDocumentId;
+		
+		private string _DocumentType;
+		
+		private string _DocumentNumber;
+		
+		private string _DocumentName;
+		
+		private string _DARNumber;
+		
+		private string _ReleasedDocumentStatus;
+		
+		private int _MemoId;
+		
+		private string _DocumentNo;
+		
+		private System.Nullable<int> _TemplateId;
+		
+		private string _TemplateName;
+		
+		private string _TemplateType;
+		
+		private System.Nullable<int> _DepartmentId;
+		
+		private string _DocumentCode;
+		
+		private System.Nullable<bool> _IsPublic;
+		
+		private string _ReportLang;
+		
+		private string _TemplateDetail;
+		
+		private string _ToPerson;
+		
+		private string _CcPerson;
+		
+		private string _TemplateSubject;
+		
+		private string _TTextForm;
+		
+		private string _TAdvanceForm;
+		
+		private System.Nullable<bool> _AutoApprove;
+		
+		private string _AutoApproveWhen;
+		
+		private System.Nullable<bool> _ApproverCanEdit;
+		
+		private System.Nullable<int> _CreatorId;
+		
+		private string _CNameTh;
+		
+		private string _CNameEn;
+		
+		private System.Nullable<int> _CPositionId;
+		
+		private string _CPositionTh;
+		
+		private string _CPositionEn;
+		
+		private System.Nullable<int> _CDepartmentId;
+		
+		private string _CDepartmentTh;
+		
+		private string _CDepartmentEn;
+		
+		private System.Nullable<int> _CDivisionId;
+		
+		private string _CDivisionTh;
+		
+		private string _CDivisionEn;
+		
+		private System.Nullable<int> _RequesterId;
+		
+		private string _RNameTh;
+		
+		private string _RNameEn;
+		
+		private System.Nullable<int> _RPositionId;
+		
+		private string _RPositionTh;
+		
+		private string _RPositionEn;
+		
+		private System.Nullable<int> _RDepartmentId;
+		
+		private string _RDepartmentTh;
+		
+		private string _RDepartmentEn;
+		
+		private System.Nullable<int> _RDivisionId;
+		
+		private string _RDivisionTh;
+		
+		private string _RDivisionEn;
+		
+		private string _MemoSubject;
+		
+		private string _MTextForm;
+		
+		private string _MAdvancveForm;
+		
+		private System.Nullable<int> _StatusId;
+		
+		private string _StatusName;
+		
+		private System.Nullable<int> _CurrentApprovalLevel;
+		
+		private System.Nullable<decimal> _Amount;
+		
+		private System.Nullable<System.DateTime> _RequestDate;
+		
+		private System.Nullable<System.DateTime> _CreatedDate;
+		
+		private string _CreatedBy;
+		
+		private System.Nullable<System.DateTime> _ModifiedDate;
+		
+		private string _ModifiedBy;
+		
+		private string _LastActionBy;
+		
+		private System.Nullable<int> _LastStatusId;
+		
+		private string _LastStatusName;
+		
+		private System.Nullable<int> _PersonWaitingId;
+		
+		private string _PersonWaiting;
+		
+		private System.Nullable<int> _AccountId;
+		
+		private System.Nullable<int> _CompanyId;
+		
+		private string _CompanyName;
+		
+		private System.Nullable<int> _ProjectID;
+		
+		private string _ProjectName;
+		
+		private bool _IsReaded;
+		
+		public ViewReleasedDocument()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReleasedDocumentId", DbType="Int NOT NULL")]
+		public int ReleasedDocumentId
+		{
+			get
+			{
+				return this._ReleasedDocumentId;
+			}
+			set
+			{
+				if ((this._ReleasedDocumentId != value))
+				{
+					this._ReleasedDocumentId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DocumentType", DbType="NVarChar(MAX)")]
+		public string DocumentType
+		{
+			get
+			{
+				return this._DocumentType;
+			}
+			set
+			{
+				if ((this._DocumentType != value))
+				{
+					this._DocumentType = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DocumentNumber", DbType="NVarChar(MAX)")]
+		public string DocumentNumber
+		{
+			get
+			{
+				return this._DocumentNumber;
+			}
+			set
+			{
+				if ((this._DocumentNumber != value))
+				{
+					this._DocumentNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DocumentName", DbType="NVarChar(MAX)")]
+		public string DocumentName
+		{
+			get
+			{
+				return this._DocumentName;
+			}
+			set
+			{
+				if ((this._DocumentName != value))
+				{
+					this._DocumentName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DARNumber", DbType="NVarChar(MAX)")]
+		public string DARNumber
+		{
+			get
+			{
+				return this._DARNumber;
+			}
+			set
+			{
+				if ((this._DARNumber != value))
+				{
+					this._DARNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReleasedDocumentStatus", DbType="NVarChar(50)")]
+		public string ReleasedDocumentStatus
+		{
+			get
+			{
+				return this._ReleasedDocumentStatus;
+			}
+			set
+			{
+				if ((this._ReleasedDocumentStatus != value))
+				{
+					this._ReleasedDocumentStatus = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MemoId", DbType="Int NOT NULL")]
+		public int MemoId
+		{
+			get
+			{
+				return this._MemoId;
+			}
+			set
+			{
+				if ((this._MemoId != value))
+				{
+					this._MemoId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DocumentNo", DbType="NVarChar(50)")]
+		public string DocumentNo
+		{
+			get
+			{
+				return this._DocumentNo;
+			}
+			set
+			{
+				if ((this._DocumentNo != value))
+				{
+					this._DocumentNo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TemplateId", DbType="Int")]
+		public System.Nullable<int> TemplateId
+		{
+			get
+			{
+				return this._TemplateId;
+			}
+			set
+			{
+				if ((this._TemplateId != value))
+				{
+					this._TemplateId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TemplateName", DbType="NVarChar(500)")]
+		public string TemplateName
+		{
+			get
+			{
+				return this._TemplateName;
+			}
+			set
+			{
+				if ((this._TemplateName != value))
+				{
+					this._TemplateName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TemplateType", DbType="NVarChar(100)")]
+		public string TemplateType
+		{
+			get
+			{
+				return this._TemplateType;
+			}
+			set
+			{
+				if ((this._TemplateType != value))
+				{
+					this._TemplateType = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DepartmentId", DbType="Int")]
+		public System.Nullable<int> DepartmentId
+		{
+			get
+			{
+				return this._DepartmentId;
+			}
+			set
+			{
+				if ((this._DepartmentId != value))
+				{
+					this._DepartmentId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DocumentCode", DbType="NVarChar(50)")]
+		public string DocumentCode
+		{
+			get
+			{
+				return this._DocumentCode;
+			}
+			set
+			{
+				if ((this._DocumentCode != value))
+				{
+					this._DocumentCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsPublic", DbType="Bit")]
+		public System.Nullable<bool> IsPublic
+		{
+			get
+			{
+				return this._IsPublic;
+			}
+			set
+			{
+				if ((this._IsPublic != value))
+				{
+					this._IsPublic = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReportLang", DbType="NVarChar(2)")]
+		public string ReportLang
+		{
+			get
+			{
+				return this._ReportLang;
+			}
+			set
+			{
+				if ((this._ReportLang != value))
+				{
+					this._ReportLang = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TemplateDetail", DbType="NVarChar(500)")]
+		public string TemplateDetail
+		{
+			get
+			{
+				return this._TemplateDetail;
+			}
+			set
+			{
+				if ((this._TemplateDetail != value))
+				{
+					this._TemplateDetail = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ToPerson", DbType="NVarChar(MAX)")]
+		public string ToPerson
+		{
+			get
+			{
+				return this._ToPerson;
+			}
+			set
+			{
+				if ((this._ToPerson != value))
+				{
+					this._ToPerson = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CcPerson", DbType="NVarChar(MAX)")]
+		public string CcPerson
+		{
+			get
+			{
+				return this._CcPerson;
+			}
+			set
+			{
+				if ((this._CcPerson != value))
+				{
+					this._CcPerson = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TemplateSubject", DbType="NVarChar(500)")]
+		public string TemplateSubject
+		{
+			get
+			{
+				return this._TemplateSubject;
+			}
+			set
+			{
+				if ((this._TemplateSubject != value))
+				{
+					this._TemplateSubject = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TTextForm", DbType="NVarChar(MAX)")]
+		public string TTextForm
+		{
+			get
+			{
+				return this._TTextForm;
+			}
+			set
+			{
+				if ((this._TTextForm != value))
+				{
+					this._TTextForm = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TAdvanceForm", DbType="NVarChar(MAX)")]
+		public string TAdvanceForm
+		{
+			get
+			{
+				return this._TAdvanceForm;
+			}
+			set
+			{
+				if ((this._TAdvanceForm != value))
+				{
+					this._TAdvanceForm = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AutoApprove", DbType="Bit")]
+		public System.Nullable<bool> AutoApprove
+		{
+			get
+			{
+				return this._AutoApprove;
+			}
+			set
+			{
+				if ((this._AutoApprove != value))
+				{
+					this._AutoApprove = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AutoApproveWhen", DbType="NVarChar(2)")]
+		public string AutoApproveWhen
+		{
+			get
+			{
+				return this._AutoApproveWhen;
+			}
+			set
+			{
+				if ((this._AutoApproveWhen != value))
+				{
+					this._AutoApproveWhen = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ApproverCanEdit", DbType="Bit")]
+		public System.Nullable<bool> ApproverCanEdit
+		{
+			get
+			{
+				return this._ApproverCanEdit;
+			}
+			set
+			{
+				if ((this._ApproverCanEdit != value))
+				{
+					this._ApproverCanEdit = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatorId", DbType="Int")]
+		public System.Nullable<int> CreatorId
+		{
+			get
+			{
+				return this._CreatorId;
+			}
+			set
+			{
+				if ((this._CreatorId != value))
+				{
+					this._CreatorId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CNameTh", DbType="NVarChar(500)")]
+		public string CNameTh
+		{
+			get
+			{
+				return this._CNameTh;
+			}
+			set
+			{
+				if ((this._CNameTh != value))
+				{
+					this._CNameTh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CNameEn", DbType="NVarChar(500)")]
+		public string CNameEn
+		{
+			get
+			{
+				return this._CNameEn;
+			}
+			set
+			{
+				if ((this._CNameEn != value))
+				{
+					this._CNameEn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CPositionId", DbType="Int")]
+		public System.Nullable<int> CPositionId
+		{
+			get
+			{
+				return this._CPositionId;
+			}
+			set
+			{
+				if ((this._CPositionId != value))
+				{
+					this._CPositionId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CPositionTh", DbType="NVarChar(500)")]
+		public string CPositionTh
+		{
+			get
+			{
+				return this._CPositionTh;
+			}
+			set
+			{
+				if ((this._CPositionTh != value))
+				{
+					this._CPositionTh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CPositionEn", DbType="NVarChar(500)")]
+		public string CPositionEn
+		{
+			get
+			{
+				return this._CPositionEn;
+			}
+			set
+			{
+				if ((this._CPositionEn != value))
+				{
+					this._CPositionEn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CDepartmentId", DbType="Int")]
+		public System.Nullable<int> CDepartmentId
+		{
+			get
+			{
+				return this._CDepartmentId;
+			}
+			set
+			{
+				if ((this._CDepartmentId != value))
+				{
+					this._CDepartmentId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CDepartmentTh", DbType="NVarChar(500)")]
+		public string CDepartmentTh
+		{
+			get
+			{
+				return this._CDepartmentTh;
+			}
+			set
+			{
+				if ((this._CDepartmentTh != value))
+				{
+					this._CDepartmentTh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CDepartmentEn", DbType="NVarChar(500)")]
+		public string CDepartmentEn
+		{
+			get
+			{
+				return this._CDepartmentEn;
+			}
+			set
+			{
+				if ((this._CDepartmentEn != value))
+				{
+					this._CDepartmentEn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CDivisionId", DbType="Int")]
+		public System.Nullable<int> CDivisionId
+		{
+			get
+			{
+				return this._CDivisionId;
+			}
+			set
+			{
+				if ((this._CDivisionId != value))
+				{
+					this._CDivisionId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CDivisionTh", DbType="NVarChar(500)")]
+		public string CDivisionTh
+		{
+			get
+			{
+				return this._CDivisionTh;
+			}
+			set
+			{
+				if ((this._CDivisionTh != value))
+				{
+					this._CDivisionTh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CDivisionEn", DbType="NVarChar(500)")]
+		public string CDivisionEn
+		{
+			get
+			{
+				return this._CDivisionEn;
+			}
+			set
+			{
+				if ((this._CDivisionEn != value))
+				{
+					this._CDivisionEn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequesterId", DbType="Int")]
+		public System.Nullable<int> RequesterId
+		{
+			get
+			{
+				return this._RequesterId;
+			}
+			set
+			{
+				if ((this._RequesterId != value))
+				{
+					this._RequesterId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RNameTh", DbType="NVarChar(500)")]
+		public string RNameTh
+		{
+			get
+			{
+				return this._RNameTh;
+			}
+			set
+			{
+				if ((this._RNameTh != value))
+				{
+					this._RNameTh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RNameEn", DbType="NVarChar(500)")]
+		public string RNameEn
+		{
+			get
+			{
+				return this._RNameEn;
+			}
+			set
+			{
+				if ((this._RNameEn != value))
+				{
+					this._RNameEn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RPositionId", DbType="Int")]
+		public System.Nullable<int> RPositionId
+		{
+			get
+			{
+				return this._RPositionId;
+			}
+			set
+			{
+				if ((this._RPositionId != value))
+				{
+					this._RPositionId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RPositionTh", DbType="NVarChar(500)")]
+		public string RPositionTh
+		{
+			get
+			{
+				return this._RPositionTh;
+			}
+			set
+			{
+				if ((this._RPositionTh != value))
+				{
+					this._RPositionTh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RPositionEn", DbType="NVarChar(500)")]
+		public string RPositionEn
+		{
+			get
+			{
+				return this._RPositionEn;
+			}
+			set
+			{
+				if ((this._RPositionEn != value))
+				{
+					this._RPositionEn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RDepartmentId", DbType="Int")]
+		public System.Nullable<int> RDepartmentId
+		{
+			get
+			{
+				return this._RDepartmentId;
+			}
+			set
+			{
+				if ((this._RDepartmentId != value))
+				{
+					this._RDepartmentId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RDepartmentTh", DbType="NVarChar(500)")]
+		public string RDepartmentTh
+		{
+			get
+			{
+				return this._RDepartmentTh;
+			}
+			set
+			{
+				if ((this._RDepartmentTh != value))
+				{
+					this._RDepartmentTh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RDepartmentEn", DbType="NVarChar(500)")]
+		public string RDepartmentEn
+		{
+			get
+			{
+				return this._RDepartmentEn;
+			}
+			set
+			{
+				if ((this._RDepartmentEn != value))
+				{
+					this._RDepartmentEn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RDivisionId", DbType="Int")]
+		public System.Nullable<int> RDivisionId
+		{
+			get
+			{
+				return this._RDivisionId;
+			}
+			set
+			{
+				if ((this._RDivisionId != value))
+				{
+					this._RDivisionId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RDivisionTh", DbType="NVarChar(500)")]
+		public string RDivisionTh
+		{
+			get
+			{
+				return this._RDivisionTh;
+			}
+			set
+			{
+				if ((this._RDivisionTh != value))
+				{
+					this._RDivisionTh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RDivisionEn", DbType="NVarChar(500)")]
+		public string RDivisionEn
+		{
+			get
+			{
+				return this._RDivisionEn;
+			}
+			set
+			{
+				if ((this._RDivisionEn != value))
+				{
+					this._RDivisionEn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MemoSubject", DbType="NVarChar(500)")]
+		public string MemoSubject
+		{
+			get
+			{
+				return this._MemoSubject;
+			}
+			set
+			{
+				if ((this._MemoSubject != value))
+				{
+					this._MemoSubject = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MTextForm", DbType="NVarChar(MAX)")]
+		public string MTextForm
+		{
+			get
+			{
+				return this._MTextForm;
+			}
+			set
+			{
+				if ((this._MTextForm != value))
+				{
+					this._MTextForm = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAdvancveForm", DbType="NVarChar(MAX)")]
+		public string MAdvancveForm
+		{
+			get
+			{
+				return this._MAdvancveForm;
+			}
+			set
+			{
+				if ((this._MAdvancveForm != value))
+				{
+					this._MAdvancveForm = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StatusId", DbType="Int")]
+		public System.Nullable<int> StatusId
+		{
+			get
+			{
+				return this._StatusId;
+			}
+			set
+			{
+				if ((this._StatusId != value))
+				{
+					this._StatusId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StatusName", DbType="NVarChar(500)")]
+		public string StatusName
+		{
+			get
+			{
+				return this._StatusName;
+			}
+			set
+			{
+				if ((this._StatusName != value))
+				{
+					this._StatusName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentApprovalLevel", DbType="Int")]
+		public System.Nullable<int> CurrentApprovalLevel
+		{
+			get
+			{
+				return this._CurrentApprovalLevel;
+			}
+			set
+			{
+				if ((this._CurrentApprovalLevel != value))
+				{
+					this._CurrentApprovalLevel = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Amount", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> Amount
+		{
+			get
+			{
+				return this._Amount;
+			}
+			set
+			{
+				if ((this._Amount != value))
+				{
+					this._Amount = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> RequestDate
+		{
+			get
+			{
+				return this._RequestDate;
+			}
+			set
+			{
+				if ((this._RequestDate != value))
+				{
+					this._RequestDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CreatedDate
+		{
+			get
+			{
+				return this._CreatedDate;
+			}
+			set
+			{
+				if ((this._CreatedDate != value))
+				{
+					this._CreatedDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedBy", DbType="NVarChar(500)")]
+		public string CreatedBy
+		{
+			get
+			{
+				return this._CreatedBy;
+			}
+			set
+			{
+				if ((this._CreatedBy != value))
+				{
+					this._CreatedBy = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModifiedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ModifiedDate
+		{
+			get
+			{
+				return this._ModifiedDate;
+			}
+			set
+			{
+				if ((this._ModifiedDate != value))
+				{
+					this._ModifiedDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModifiedBy", DbType="NVarChar(500)")]
+		public string ModifiedBy
+		{
+			get
+			{
+				return this._ModifiedBy;
+			}
+			set
+			{
+				if ((this._ModifiedBy != value))
+				{
+					this._ModifiedBy = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastActionBy", DbType="NVarChar(500)")]
+		public string LastActionBy
+		{
+			get
+			{
+				return this._LastActionBy;
+			}
+			set
+			{
+				if ((this._LastActionBy != value))
+				{
+					this._LastActionBy = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastStatusId", DbType="Int")]
+		public System.Nullable<int> LastStatusId
+		{
+			get
+			{
+				return this._LastStatusId;
+			}
+			set
+			{
+				if ((this._LastStatusId != value))
+				{
+					this._LastStatusId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastStatusName", DbType="NVarChar(500)")]
+		public string LastStatusName
+		{
+			get
+			{
+				return this._LastStatusName;
+			}
+			set
+			{
+				if ((this._LastStatusName != value))
+				{
+					this._LastStatusName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PersonWaitingId", DbType="Int")]
+		public System.Nullable<int> PersonWaitingId
+		{
+			get
+			{
+				return this._PersonWaitingId;
+			}
+			set
+			{
+				if ((this._PersonWaitingId != value))
+				{
+					this._PersonWaitingId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PersonWaiting", DbType="NVarChar(500)")]
+		public string PersonWaiting
+		{
+			get
+			{
+				return this._PersonWaiting;
+			}
+			set
+			{
+				if ((this._PersonWaiting != value))
+				{
+					this._PersonWaiting = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountId", DbType="Int")]
+		public System.Nullable<int> AccountId
+		{
+			get
+			{
+				return this._AccountId;
+			}
+			set
+			{
+				if ((this._AccountId != value))
+				{
+					this._AccountId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyId", DbType="Int")]
+		public System.Nullable<int> CompanyId
+		{
+			get
+			{
+				return this._CompanyId;
+			}
+			set
+			{
+				if ((this._CompanyId != value))
+				{
+					this._CompanyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyName", DbType="NVarChar(400)")]
+		public string CompanyName
+		{
+			get
+			{
+				return this._CompanyName;
+			}
+			set
+			{
+				if ((this._CompanyName != value))
+				{
+					this._CompanyName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProjectID", DbType="Int")]
+		public System.Nullable<int> ProjectID
+		{
+			get
+			{
+				return this._ProjectID;
+			}
+			set
+			{
+				if ((this._ProjectID != value))
+				{
+					this._ProjectID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProjectName", DbType="NVarChar(400)")]
+		public string ProjectName
+		{
+			get
+			{
+				return this._ProjectName;
+			}
+			set
+			{
+				if ((this._ProjectName != value))
+				{
+					this._ProjectName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsReaded", DbType="Bit NOT NULL")]
+		public bool IsReaded
+		{
+			get
+			{
+				return this._IsReaded;
+			}
+			set
+			{
+				if ((this._IsReaded != value))
+				{
+					this._IsReaded = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ViewReport")]
+	public partial class ViewReport
+	{
+		
+		private System.Nullable<int> _ActionHistory_ActionId;
+		
+		private System.Nullable<int> _ActionHistory_MemoId;
+		
+		private System.Nullable<int> _ActionHistory_ActorId;
+		
+		private string _ActionHistory_ActorName;
+		
+		private System.Nullable<System.DateTime> _ActionHistory_StartDate;
+		
+		private string _ActionHistory_ActionProcess;
+		
+		private System.Nullable<System.DateTime> _ActionHistory_ActionDate;
+		
+		private System.Nullable<int> _ActionHistory_NextApproverID;
+		
+		private string _ActionHistoryNextApproverName;
+		
+		private string _ActionHistory_Comment;
+		
+		private string _ActionHistory_SignPicPath;
+		
+		private string _ActionHistory_ActionStatus;
+		
+		private System.Nullable<int> _ActionHistory_SignatureId;
+		
+		private System.Nullable<System.DateTime> _ActionHistory_CreatedDate;
+		
+		private string _ActionHistory_CreatedBy;
+		
+		private System.Nullable<bool> _ActionHistory_IsActive;
+		
+		private System.Nullable<int> _ActionHistory_AccountId;
+		
+		private System.Nullable<int> _AttachFile_AttachId;
+		
+		private System.Nullable<int> _AttachFile_ActorId;
+		
+		private string _AttachFile_ActorName;
+		
+		private System.Nullable<System.DateTime> _AttachFile_AttachedDate;
+		
+		private string _AttachFile_AttachFile;
+		
+		private string _AttachFile_FileName;
+		
+		private string _AttachFile_FilePath;
+		
+		private System.Nullable<int> _AttachFile_MemoId;
+		
+		private System.Nullable<int> _AttachFile_DelegateId;
+		
+		private System.Nullable<System.DateTime> _AttachFile_CreatedDate;
+		
+		private string _AttachFile_CreatedBy;
+		
+		private System.Nullable<System.DateTime> _AttachFile_ModifiedDate;
+		
+		private string _AttachFile_ModifiedBy;
+		
+		private System.Nullable<int> _AttachFile_AccountId;
+		
+		private int _Memo_MemoId;
+		
+		private string _Memo_DocumentNo;
+		
+		private System.Nullable<int> _Memo_TemplateId;
+		
+		private string _Memo_TemplateName;
+		
+		private string _Memo_TemplateType;
+		
+		private System.Nullable<int> _Memo_DepartmentId;
+		
+		private string _Memo_DocumentCode;
+		
+		private System.Nullable<bool> _Memo_IsPublic;
+		
+		private string _Memo_ReportLang;
+		
+		private string _Memo_ToPerson;
+		
+		private string _Memo_TemplateDetail;
+		
+		private string _Memo_CcPerson;
+		
+		private string _Memo_TemplateSubject;
+		
+		private string _Memo_TTextForm;
+		
+		private string _Memo_TAdvanceForm;
+		
+		private System.Nullable<bool> _Memo_AutoApprove;
+		
+		private string _Memo_AutoApproveWhen;
+		
+		private System.Nullable<bool> _Memo_ApproverCanEdit;
+		
+		private System.Nullable<int> _Memo_CreatorId;
+		
+		private string _Memo_CNameEn;
+		
+		private string _Memo_CNameTh;
+		
+		private System.Nullable<int> _Memo_CPositionId;
+		
+		private string _Memo_CPositionTh;
+		
+		private string _Memo_CPositionEn;
+		
+		private System.Nullable<int> _Memo_CDepartmentId;
+		
+		private string _Memo_CDepartmentTh;
+		
+		private string _Memo_CDepartmentEn;
+		
+		private System.Nullable<int> _Memo_CDivisionId;
+		
+		private string _Memo_CDivisionEn;
+		
+		private string _Memo_CDivisionTh;
+		
+		private System.Nullable<int> _Memo_RequesterId;
+		
+		private string _Memo_RequesterCode;
+		
+		private string _Memo_RNameTh;
+		
+		private string _Memo_RNameEn;
+		
+		private System.Nullable<int> _Memo_RPositionId;
+		
+		private string _Memo_RPositionTh;
+		
+		private string _Memo_RPositionEn;
+		
+		private System.Nullable<int> _Memo_RDepartmentId;
+		
+		private string _Memo_RDepartmentTh;
+		
+		private string _Memo_RDepartmentEn;
+		
+		private System.Nullable<int> _Memo_RDivisionId;
+		
+		private string _Memo_RDivisionTh;
+		
+		private string _Memo_RDivisionEn;
+		
+		private string _Memo_MemoSubject;
+		
+		private string _Memo_MTextForm;
+		
+		private string _Memo_MAdvancveForm;
+		
+		private System.Nullable<int> _Memo_StatusId;
+		
+		private string _Memo_StatusName;
+		
+		private System.Nullable<int> _Memo_CurrentApprovalLevel;
+		
+		private System.Nullable<decimal> _Memo_Amount;
+		
+		private System.Nullable<System.DateTime> _Memo_RequestDate;
+		
+		private System.Nullable<System.DateTime> _Memo_CreatedDate;
+		
+		private string _Memo_CreatedBy;
+		
+		private System.Nullable<System.DateTime> _Memo_ModifiedDate;
+		
+		private string _Memo_ModifiedBy;
+		
+		private string _Memo_LastActionBy;
+		
+		private System.Nullable<int> _Memo_LastStatusId;
+		
+		private string _Memo_LastStatusName;
+		
+		private System.Nullable<int> _Memo_PersonWaitingId;
+		
+		private string _Memo_PersonWaiting;
+		
+		private System.Nullable<int> _Memo_AccountId;
+		
+		private string _Memo_CompanyName;
+		
+		private System.Nullable<int> _LineApprove_LineApproveId;
+		
+		private System.Nullable<int> _LineApprove_MemoId;
+		
+		private System.Nullable<int> _LineApprove_Seq;
+		
+		private System.Nullable<int> _LineApprove_EmployeeId;
+		
+		private string _LineApprove_EmployeeCode;
+		
+		private string _LineApprove_NameTh;
+		
+		private string _LineApprove_NameEn;
+		
+		private string _LineApprove_PositionTH;
+		
+		private string _LineApprove_PositionEN;
+		
+		private System.Nullable<int> _LineApprove_SignatureId;
+		
+		private string _LineApprove_SignatureTh;
+		
+		private string _LineApprove_SignatureEn;
+		
+		private System.Nullable<bool> _LineApprove_IsActive;
+		
+		private System.Nullable<int> _LineApprove_AccountId;
+		
+		public ViewReport()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActionHistory_ActionId", DbType="Int")]
+		public System.Nullable<int> ActionHistory_ActionId
+		{
+			get
+			{
+				return this._ActionHistory_ActionId;
+			}
+			set
+			{
+				if ((this._ActionHistory_ActionId != value))
+				{
+					this._ActionHistory_ActionId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActionHistory_MemoId", DbType="Int")]
+		public System.Nullable<int> ActionHistory_MemoId
+		{
+			get
+			{
+				return this._ActionHistory_MemoId;
+			}
+			set
+			{
+				if ((this._ActionHistory_MemoId != value))
+				{
+					this._ActionHistory_MemoId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActionHistory_ActorId", DbType="Int")]
+		public System.Nullable<int> ActionHistory_ActorId
+		{
+			get
+			{
+				return this._ActionHistory_ActorId;
+			}
+			set
+			{
+				if ((this._ActionHistory_ActorId != value))
+				{
+					this._ActionHistory_ActorId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActionHistory_ActorName", DbType="NVarChar(500)")]
+		public string ActionHistory_ActorName
+		{
+			get
+			{
+				return this._ActionHistory_ActorName;
+			}
+			set
+			{
+				if ((this._ActionHistory_ActorName != value))
+				{
+					this._ActionHistory_ActorName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActionHistory_StartDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ActionHistory_StartDate
+		{
+			get
+			{
+				return this._ActionHistory_StartDate;
+			}
+			set
+			{
+				if ((this._ActionHistory_StartDate != value))
+				{
+					this._ActionHistory_StartDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActionHistory_ActionProcess", DbType="NVarChar(100)")]
+		public string ActionHistory_ActionProcess
+		{
+			get
+			{
+				return this._ActionHistory_ActionProcess;
+			}
+			set
+			{
+				if ((this._ActionHistory_ActionProcess != value))
+				{
+					this._ActionHistory_ActionProcess = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActionHistory_ActionDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ActionHistory_ActionDate
+		{
+			get
+			{
+				return this._ActionHistory_ActionDate;
+			}
+			set
+			{
+				if ((this._ActionHistory_ActionDate != value))
+				{
+					this._ActionHistory_ActionDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActionHistory_NextApproverID", DbType="Int")]
+		public System.Nullable<int> ActionHistory_NextApproverID
+		{
+			get
+			{
+				return this._ActionHistory_NextApproverID;
+			}
+			set
+			{
+				if ((this._ActionHistory_NextApproverID != value))
+				{
+					this._ActionHistory_NextApproverID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActionHistoryNextApproverName", DbType="NVarChar(500)")]
+		public string ActionHistoryNextApproverName
+		{
+			get
+			{
+				return this._ActionHistoryNextApproverName;
+			}
+			set
+			{
+				if ((this._ActionHistoryNextApproverName != value))
+				{
+					this._ActionHistoryNextApproverName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActionHistory_Comment", DbType="NText", UpdateCheck=UpdateCheck.Never)]
+		public string ActionHistory_Comment
+		{
+			get
+			{
+				return this._ActionHistory_Comment;
+			}
+			set
+			{
+				if ((this._ActionHistory_Comment != value))
+				{
+					this._ActionHistory_Comment = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActionHistory_SignPicPath", DbType="NVarChar(500)")]
+		public string ActionHistory_SignPicPath
+		{
+			get
+			{
+				return this._ActionHistory_SignPicPath;
+			}
+			set
+			{
+				if ((this._ActionHistory_SignPicPath != value))
+				{
+					this._ActionHistory_SignPicPath = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActionHistory_ActionStatus", DbType="NVarChar(100)")]
+		public string ActionHistory_ActionStatus
+		{
+			get
+			{
+				return this._ActionHistory_ActionStatus;
+			}
+			set
+			{
+				if ((this._ActionHistory_ActionStatus != value))
+				{
+					this._ActionHistory_ActionStatus = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActionHistory_SignatureId", DbType="Int")]
+		public System.Nullable<int> ActionHistory_SignatureId
+		{
+			get
+			{
+				return this._ActionHistory_SignatureId;
+			}
+			set
+			{
+				if ((this._ActionHistory_SignatureId != value))
+				{
+					this._ActionHistory_SignatureId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActionHistory_CreatedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ActionHistory_CreatedDate
+		{
+			get
+			{
+				return this._ActionHistory_CreatedDate;
+			}
+			set
+			{
+				if ((this._ActionHistory_CreatedDate != value))
+				{
+					this._ActionHistory_CreatedDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActionHistory_CreatedBy", DbType="NVarChar(500)")]
+		public string ActionHistory_CreatedBy
+		{
+			get
+			{
+				return this._ActionHistory_CreatedBy;
+			}
+			set
+			{
+				if ((this._ActionHistory_CreatedBy != value))
+				{
+					this._ActionHistory_CreatedBy = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActionHistory_IsActive", DbType="Bit")]
+		public System.Nullable<bool> ActionHistory_IsActive
+		{
+			get
+			{
+				return this._ActionHistory_IsActive;
+			}
+			set
+			{
+				if ((this._ActionHistory_IsActive != value))
+				{
+					this._ActionHistory_IsActive = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActionHistory_AccountId", DbType="Int")]
+		public System.Nullable<int> ActionHistory_AccountId
+		{
+			get
+			{
+				return this._ActionHistory_AccountId;
+			}
+			set
+			{
+				if ((this._ActionHistory_AccountId != value))
+				{
+					this._ActionHistory_AccountId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AttachFile_AttachId", DbType="Int")]
+		public System.Nullable<int> AttachFile_AttachId
+		{
+			get
+			{
+				return this._AttachFile_AttachId;
+			}
+			set
+			{
+				if ((this._AttachFile_AttachId != value))
+				{
+					this._AttachFile_AttachId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AttachFile_ActorId", DbType="Int")]
+		public System.Nullable<int> AttachFile_ActorId
+		{
+			get
+			{
+				return this._AttachFile_ActorId;
+			}
+			set
+			{
+				if ((this._AttachFile_ActorId != value))
+				{
+					this._AttachFile_ActorId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AttachFile_ActorName", DbType="NVarChar(500)")]
+		public string AttachFile_ActorName
+		{
+			get
+			{
+				return this._AttachFile_ActorName;
+			}
+			set
+			{
+				if ((this._AttachFile_ActorName != value))
+				{
+					this._AttachFile_ActorName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AttachFile_AttachedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> AttachFile_AttachedDate
+		{
+			get
+			{
+				return this._AttachFile_AttachedDate;
+			}
+			set
+			{
+				if ((this._AttachFile_AttachedDate != value))
+				{
+					this._AttachFile_AttachedDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AttachFile_AttachFile", DbType="NVarChar(500)")]
+		public string AttachFile_AttachFile
+		{
+			get
+			{
+				return this._AttachFile_AttachFile;
+			}
+			set
+			{
+				if ((this._AttachFile_AttachFile != value))
+				{
+					this._AttachFile_AttachFile = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AttachFile_FileName", DbType="NVarChar(500)")]
+		public string AttachFile_FileName
+		{
+			get
+			{
+				return this._AttachFile_FileName;
+			}
+			set
+			{
+				if ((this._AttachFile_FileName != value))
+				{
+					this._AttachFile_FileName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AttachFile_FilePath", DbType="NVarChar(500)")]
+		public string AttachFile_FilePath
+		{
+			get
+			{
+				return this._AttachFile_FilePath;
+			}
+			set
+			{
+				if ((this._AttachFile_FilePath != value))
+				{
+					this._AttachFile_FilePath = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AttachFile_MemoId", DbType="Int")]
+		public System.Nullable<int> AttachFile_MemoId
+		{
+			get
+			{
+				return this._AttachFile_MemoId;
+			}
+			set
+			{
+				if ((this._AttachFile_MemoId != value))
+				{
+					this._AttachFile_MemoId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AttachFile_DelegateId", DbType="Int")]
+		public System.Nullable<int> AttachFile_DelegateId
+		{
+			get
+			{
+				return this._AttachFile_DelegateId;
+			}
+			set
+			{
+				if ((this._AttachFile_DelegateId != value))
+				{
+					this._AttachFile_DelegateId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AttachFile_CreatedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> AttachFile_CreatedDate
+		{
+			get
+			{
+				return this._AttachFile_CreatedDate;
+			}
+			set
+			{
+				if ((this._AttachFile_CreatedDate != value))
+				{
+					this._AttachFile_CreatedDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AttachFile_CreatedBy", DbType="NVarChar(500)")]
+		public string AttachFile_CreatedBy
+		{
+			get
+			{
+				return this._AttachFile_CreatedBy;
+			}
+			set
+			{
+				if ((this._AttachFile_CreatedBy != value))
+				{
+					this._AttachFile_CreatedBy = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AttachFile_ModifiedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> AttachFile_ModifiedDate
+		{
+			get
+			{
+				return this._AttachFile_ModifiedDate;
+			}
+			set
+			{
+				if ((this._AttachFile_ModifiedDate != value))
+				{
+					this._AttachFile_ModifiedDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AttachFile_ModifiedBy", DbType="NVarChar(500)")]
+		public string AttachFile_ModifiedBy
+		{
+			get
+			{
+				return this._AttachFile_ModifiedBy;
+			}
+			set
+			{
+				if ((this._AttachFile_ModifiedBy != value))
+				{
+					this._AttachFile_ModifiedBy = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AttachFile_AccountId", DbType="Int")]
+		public System.Nullable<int> AttachFile_AccountId
+		{
+			get
+			{
+				return this._AttachFile_AccountId;
+			}
+			set
+			{
+				if ((this._AttachFile_AccountId != value))
+				{
+					this._AttachFile_AccountId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_MemoId", DbType="Int NOT NULL")]
+		public int Memo_MemoId
+		{
+			get
+			{
+				return this._Memo_MemoId;
+			}
+			set
+			{
+				if ((this._Memo_MemoId != value))
+				{
+					this._Memo_MemoId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_DocumentNo", DbType="NVarChar(50)")]
+		public string Memo_DocumentNo
+		{
+			get
+			{
+				return this._Memo_DocumentNo;
+			}
+			set
+			{
+				if ((this._Memo_DocumentNo != value))
+				{
+					this._Memo_DocumentNo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_TemplateId", DbType="Int")]
+		public System.Nullable<int> Memo_TemplateId
+		{
+			get
+			{
+				return this._Memo_TemplateId;
+			}
+			set
+			{
+				if ((this._Memo_TemplateId != value))
+				{
+					this._Memo_TemplateId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_TemplateName", DbType="NVarChar(500)")]
+		public string Memo_TemplateName
+		{
+			get
+			{
+				return this._Memo_TemplateName;
+			}
+			set
+			{
+				if ((this._Memo_TemplateName != value))
+				{
+					this._Memo_TemplateName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_TemplateType", DbType="NVarChar(100)")]
+		public string Memo_TemplateType
+		{
+			get
+			{
+				return this._Memo_TemplateType;
+			}
+			set
+			{
+				if ((this._Memo_TemplateType != value))
+				{
+					this._Memo_TemplateType = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_DepartmentId", DbType="Int")]
+		public System.Nullable<int> Memo_DepartmentId
+		{
+			get
+			{
+				return this._Memo_DepartmentId;
+			}
+			set
+			{
+				if ((this._Memo_DepartmentId != value))
+				{
+					this._Memo_DepartmentId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_DocumentCode", DbType="NVarChar(50)")]
+		public string Memo_DocumentCode
+		{
+			get
+			{
+				return this._Memo_DocumentCode;
+			}
+			set
+			{
+				if ((this._Memo_DocumentCode != value))
+				{
+					this._Memo_DocumentCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_IsPublic", DbType="Bit")]
+		public System.Nullable<bool> Memo_IsPublic
+		{
+			get
+			{
+				return this._Memo_IsPublic;
+			}
+			set
+			{
+				if ((this._Memo_IsPublic != value))
+				{
+					this._Memo_IsPublic = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_ReportLang", DbType="NVarChar(2)")]
+		public string Memo_ReportLang
+		{
+			get
+			{
+				return this._Memo_ReportLang;
+			}
+			set
+			{
+				if ((this._Memo_ReportLang != value))
+				{
+					this._Memo_ReportLang = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_ToPerson", DbType="NVarChar(MAX)")]
+		public string Memo_ToPerson
+		{
+			get
+			{
+				return this._Memo_ToPerson;
+			}
+			set
+			{
+				if ((this._Memo_ToPerson != value))
+				{
+					this._Memo_ToPerson = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_TemplateDetail", DbType="NVarChar(500)")]
+		public string Memo_TemplateDetail
+		{
+			get
+			{
+				return this._Memo_TemplateDetail;
+			}
+			set
+			{
+				if ((this._Memo_TemplateDetail != value))
+				{
+					this._Memo_TemplateDetail = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_CcPerson", DbType="NVarChar(MAX)")]
+		public string Memo_CcPerson
+		{
+			get
+			{
+				return this._Memo_CcPerson;
+			}
+			set
+			{
+				if ((this._Memo_CcPerson != value))
+				{
+					this._Memo_CcPerson = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_TemplateSubject", DbType="NVarChar(500)")]
+		public string Memo_TemplateSubject
+		{
+			get
+			{
+				return this._Memo_TemplateSubject;
+			}
+			set
+			{
+				if ((this._Memo_TemplateSubject != value))
+				{
+					this._Memo_TemplateSubject = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_TTextForm", DbType="NVarChar(MAX)")]
+		public string Memo_TTextForm
+		{
+			get
+			{
+				return this._Memo_TTextForm;
+			}
+			set
+			{
+				if ((this._Memo_TTextForm != value))
+				{
+					this._Memo_TTextForm = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_TAdvanceForm", DbType="NVarChar(MAX)")]
+		public string Memo_TAdvanceForm
+		{
+			get
+			{
+				return this._Memo_TAdvanceForm;
+			}
+			set
+			{
+				if ((this._Memo_TAdvanceForm != value))
+				{
+					this._Memo_TAdvanceForm = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_AutoApprove", DbType="Bit")]
+		public System.Nullable<bool> Memo_AutoApprove
+		{
+			get
+			{
+				return this._Memo_AutoApprove;
+			}
+			set
+			{
+				if ((this._Memo_AutoApprove != value))
+				{
+					this._Memo_AutoApprove = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_AutoApproveWhen", DbType="NVarChar(2)")]
+		public string Memo_AutoApproveWhen
+		{
+			get
+			{
+				return this._Memo_AutoApproveWhen;
+			}
+			set
+			{
+				if ((this._Memo_AutoApproveWhen != value))
+				{
+					this._Memo_AutoApproveWhen = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_ApproverCanEdit", DbType="Bit")]
+		public System.Nullable<bool> Memo_ApproverCanEdit
+		{
+			get
+			{
+				return this._Memo_ApproverCanEdit;
+			}
+			set
+			{
+				if ((this._Memo_ApproverCanEdit != value))
+				{
+					this._Memo_ApproverCanEdit = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_CreatorId", DbType="Int")]
+		public System.Nullable<int> Memo_CreatorId
+		{
+			get
+			{
+				return this._Memo_CreatorId;
+			}
+			set
+			{
+				if ((this._Memo_CreatorId != value))
+				{
+					this._Memo_CreatorId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_CNameEn", DbType="NVarChar(500)")]
+		public string Memo_CNameEn
+		{
+			get
+			{
+				return this._Memo_CNameEn;
+			}
+			set
+			{
+				if ((this._Memo_CNameEn != value))
+				{
+					this._Memo_CNameEn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_CNameTh", DbType="NVarChar(500)")]
+		public string Memo_CNameTh
+		{
+			get
+			{
+				return this._Memo_CNameTh;
+			}
+			set
+			{
+				if ((this._Memo_CNameTh != value))
+				{
+					this._Memo_CNameTh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_CPositionId", DbType="Int")]
+		public System.Nullable<int> Memo_CPositionId
+		{
+			get
+			{
+				return this._Memo_CPositionId;
+			}
+			set
+			{
+				if ((this._Memo_CPositionId != value))
+				{
+					this._Memo_CPositionId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_CPositionTh", DbType="NVarChar(500)")]
+		public string Memo_CPositionTh
+		{
+			get
+			{
+				return this._Memo_CPositionTh;
+			}
+			set
+			{
+				if ((this._Memo_CPositionTh != value))
+				{
+					this._Memo_CPositionTh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_CPositionEn", DbType="NVarChar(500)")]
+		public string Memo_CPositionEn
+		{
+			get
+			{
+				return this._Memo_CPositionEn;
+			}
+			set
+			{
+				if ((this._Memo_CPositionEn != value))
+				{
+					this._Memo_CPositionEn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_CDepartmentId", DbType="Int")]
+		public System.Nullable<int> Memo_CDepartmentId
+		{
+			get
+			{
+				return this._Memo_CDepartmentId;
+			}
+			set
+			{
+				if ((this._Memo_CDepartmentId != value))
+				{
+					this._Memo_CDepartmentId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_CDepartmentTh", DbType="NVarChar(500)")]
+		public string Memo_CDepartmentTh
+		{
+			get
+			{
+				return this._Memo_CDepartmentTh;
+			}
+			set
+			{
+				if ((this._Memo_CDepartmentTh != value))
+				{
+					this._Memo_CDepartmentTh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_CDepartmentEn", DbType="NVarChar(500)")]
+		public string Memo_CDepartmentEn
+		{
+			get
+			{
+				return this._Memo_CDepartmentEn;
+			}
+			set
+			{
+				if ((this._Memo_CDepartmentEn != value))
+				{
+					this._Memo_CDepartmentEn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_CDivisionId", DbType="Int")]
+		public System.Nullable<int> Memo_CDivisionId
+		{
+			get
+			{
+				return this._Memo_CDivisionId;
+			}
+			set
+			{
+				if ((this._Memo_CDivisionId != value))
+				{
+					this._Memo_CDivisionId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_CDivisionEn", DbType="NVarChar(500)")]
+		public string Memo_CDivisionEn
+		{
+			get
+			{
+				return this._Memo_CDivisionEn;
+			}
+			set
+			{
+				if ((this._Memo_CDivisionEn != value))
+				{
+					this._Memo_CDivisionEn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_CDivisionTh", DbType="NVarChar(500)")]
+		public string Memo_CDivisionTh
+		{
+			get
+			{
+				return this._Memo_CDivisionTh;
+			}
+			set
+			{
+				if ((this._Memo_CDivisionTh != value))
+				{
+					this._Memo_CDivisionTh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_RequesterId", DbType="Int")]
+		public System.Nullable<int> Memo_RequesterId
+		{
+			get
+			{
+				return this._Memo_RequesterId;
+			}
+			set
+			{
+				if ((this._Memo_RequesterId != value))
+				{
+					this._Memo_RequesterId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_RequesterCode", DbType="NVarChar(10)")]
+		public string Memo_RequesterCode
+		{
+			get
+			{
+				return this._Memo_RequesterCode;
+			}
+			set
+			{
+				if ((this._Memo_RequesterCode != value))
+				{
+					this._Memo_RequesterCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_RNameTh", DbType="NVarChar(500)")]
+		public string Memo_RNameTh
+		{
+			get
+			{
+				return this._Memo_RNameTh;
+			}
+			set
+			{
+				if ((this._Memo_RNameTh != value))
+				{
+					this._Memo_RNameTh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_RNameEn", DbType="NVarChar(500)")]
+		public string Memo_RNameEn
+		{
+			get
+			{
+				return this._Memo_RNameEn;
+			}
+			set
+			{
+				if ((this._Memo_RNameEn != value))
+				{
+					this._Memo_RNameEn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_RPositionId", DbType="Int")]
+		public System.Nullable<int> Memo_RPositionId
+		{
+			get
+			{
+				return this._Memo_RPositionId;
+			}
+			set
+			{
+				if ((this._Memo_RPositionId != value))
+				{
+					this._Memo_RPositionId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_RPositionTh", DbType="NVarChar(500)")]
+		public string Memo_RPositionTh
+		{
+			get
+			{
+				return this._Memo_RPositionTh;
+			}
+			set
+			{
+				if ((this._Memo_RPositionTh != value))
+				{
+					this._Memo_RPositionTh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_RPositionEn", DbType="NVarChar(500)")]
+		public string Memo_RPositionEn
+		{
+			get
+			{
+				return this._Memo_RPositionEn;
+			}
+			set
+			{
+				if ((this._Memo_RPositionEn != value))
+				{
+					this._Memo_RPositionEn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_RDepartmentId", DbType="Int")]
+		public System.Nullable<int> Memo_RDepartmentId
+		{
+			get
+			{
+				return this._Memo_RDepartmentId;
+			}
+			set
+			{
+				if ((this._Memo_RDepartmentId != value))
+				{
+					this._Memo_RDepartmentId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_RDepartmentTh", DbType="NVarChar(500)")]
+		public string Memo_RDepartmentTh
+		{
+			get
+			{
+				return this._Memo_RDepartmentTh;
+			}
+			set
+			{
+				if ((this._Memo_RDepartmentTh != value))
+				{
+					this._Memo_RDepartmentTh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_RDepartmentEn", DbType="NVarChar(500)")]
+		public string Memo_RDepartmentEn
+		{
+			get
+			{
+				return this._Memo_RDepartmentEn;
+			}
+			set
+			{
+				if ((this._Memo_RDepartmentEn != value))
+				{
+					this._Memo_RDepartmentEn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_RDivisionId", DbType="Int")]
+		public System.Nullable<int> Memo_RDivisionId
+		{
+			get
+			{
+				return this._Memo_RDivisionId;
+			}
+			set
+			{
+				if ((this._Memo_RDivisionId != value))
+				{
+					this._Memo_RDivisionId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_RDivisionTh", DbType="NVarChar(500)")]
+		public string Memo_RDivisionTh
+		{
+			get
+			{
+				return this._Memo_RDivisionTh;
+			}
+			set
+			{
+				if ((this._Memo_RDivisionTh != value))
+				{
+					this._Memo_RDivisionTh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_RDivisionEn", DbType="NVarChar(500)")]
+		public string Memo_RDivisionEn
+		{
+			get
+			{
+				return this._Memo_RDivisionEn;
+			}
+			set
+			{
+				if ((this._Memo_RDivisionEn != value))
+				{
+					this._Memo_RDivisionEn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_MemoSubject", DbType="NVarChar(500)")]
+		public string Memo_MemoSubject
+		{
+			get
+			{
+				return this._Memo_MemoSubject;
+			}
+			set
+			{
+				if ((this._Memo_MemoSubject != value))
+				{
+					this._Memo_MemoSubject = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_MTextForm", DbType="NVarChar(MAX)")]
+		public string Memo_MTextForm
+		{
+			get
+			{
+				return this._Memo_MTextForm;
+			}
+			set
+			{
+				if ((this._Memo_MTextForm != value))
+				{
+					this._Memo_MTextForm = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_MAdvancveForm", DbType="NVarChar(MAX)")]
+		public string Memo_MAdvancveForm
+		{
+			get
+			{
+				return this._Memo_MAdvancveForm;
+			}
+			set
+			{
+				if ((this._Memo_MAdvancveForm != value))
+				{
+					this._Memo_MAdvancveForm = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_StatusId", DbType="Int")]
+		public System.Nullable<int> Memo_StatusId
+		{
+			get
+			{
+				return this._Memo_StatusId;
+			}
+			set
+			{
+				if ((this._Memo_StatusId != value))
+				{
+					this._Memo_StatusId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_StatusName", DbType="NVarChar(500)")]
+		public string Memo_StatusName
+		{
+			get
+			{
+				return this._Memo_StatusName;
+			}
+			set
+			{
+				if ((this._Memo_StatusName != value))
+				{
+					this._Memo_StatusName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_CurrentApprovalLevel", DbType="Int")]
+		public System.Nullable<int> Memo_CurrentApprovalLevel
+		{
+			get
+			{
+				return this._Memo_CurrentApprovalLevel;
+			}
+			set
+			{
+				if ((this._Memo_CurrentApprovalLevel != value))
+				{
+					this._Memo_CurrentApprovalLevel = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_Amount", DbType="Decimal(19,2)")]
+		public System.Nullable<decimal> Memo_Amount
+		{
+			get
+			{
+				return this._Memo_Amount;
+			}
+			set
+			{
+				if ((this._Memo_Amount != value))
+				{
+					this._Memo_Amount = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_RequestDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Memo_RequestDate
+		{
+			get
+			{
+				return this._Memo_RequestDate;
+			}
+			set
+			{
+				if ((this._Memo_RequestDate != value))
+				{
+					this._Memo_RequestDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_CreatedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Memo_CreatedDate
+		{
+			get
+			{
+				return this._Memo_CreatedDate;
+			}
+			set
+			{
+				if ((this._Memo_CreatedDate != value))
+				{
+					this._Memo_CreatedDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_CreatedBy", DbType="NVarChar(500)")]
+		public string Memo_CreatedBy
+		{
+			get
+			{
+				return this._Memo_CreatedBy;
+			}
+			set
+			{
+				if ((this._Memo_CreatedBy != value))
+				{
+					this._Memo_CreatedBy = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_ModifiedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Memo_ModifiedDate
+		{
+			get
+			{
+				return this._Memo_ModifiedDate;
+			}
+			set
+			{
+				if ((this._Memo_ModifiedDate != value))
+				{
+					this._Memo_ModifiedDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_ModifiedBy", DbType="NVarChar(500)")]
+		public string Memo_ModifiedBy
+		{
+			get
+			{
+				return this._Memo_ModifiedBy;
+			}
+			set
+			{
+				if ((this._Memo_ModifiedBy != value))
+				{
+					this._Memo_ModifiedBy = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_LastActionBy", DbType="NVarChar(500)")]
+		public string Memo_LastActionBy
+		{
+			get
+			{
+				return this._Memo_LastActionBy;
+			}
+			set
+			{
+				if ((this._Memo_LastActionBy != value))
+				{
+					this._Memo_LastActionBy = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_LastStatusId", DbType="Int")]
+		public System.Nullable<int> Memo_LastStatusId
+		{
+			get
+			{
+				return this._Memo_LastStatusId;
+			}
+			set
+			{
+				if ((this._Memo_LastStatusId != value))
+				{
+					this._Memo_LastStatusId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_LastStatusName", DbType="NVarChar(500)")]
+		public string Memo_LastStatusName
+		{
+			get
+			{
+				return this._Memo_LastStatusName;
+			}
+			set
+			{
+				if ((this._Memo_LastStatusName != value))
+				{
+					this._Memo_LastStatusName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_PersonWaitingId", DbType="Int")]
+		public System.Nullable<int> Memo_PersonWaitingId
+		{
+			get
+			{
+				return this._Memo_PersonWaitingId;
+			}
+			set
+			{
+				if ((this._Memo_PersonWaitingId != value))
+				{
+					this._Memo_PersonWaitingId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_PersonWaiting", DbType="NVarChar(500)")]
+		public string Memo_PersonWaiting
+		{
+			get
+			{
+				return this._Memo_PersonWaiting;
+			}
+			set
+			{
+				if ((this._Memo_PersonWaiting != value))
+				{
+					this._Memo_PersonWaiting = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_AccountId", DbType="Int")]
+		public System.Nullable<int> Memo_AccountId
+		{
+			get
+			{
+				return this._Memo_AccountId;
+			}
+			set
+			{
+				if ((this._Memo_AccountId != value))
+				{
+					this._Memo_AccountId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memo_CompanyName", DbType="NVarChar(400)")]
+		public string Memo_CompanyName
+		{
+			get
+			{
+				return this._Memo_CompanyName;
+			}
+			set
+			{
+				if ((this._Memo_CompanyName != value))
+				{
+					this._Memo_CompanyName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LineApprove_LineApproveId", DbType="Int")]
+		public System.Nullable<int> LineApprove_LineApproveId
+		{
+			get
+			{
+				return this._LineApprove_LineApproveId;
+			}
+			set
+			{
+				if ((this._LineApprove_LineApproveId != value))
+				{
+					this._LineApprove_LineApproveId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LineApprove_MemoId", DbType="Int")]
+		public System.Nullable<int> LineApprove_MemoId
+		{
+			get
+			{
+				return this._LineApprove_MemoId;
+			}
+			set
+			{
+				if ((this._LineApprove_MemoId != value))
+				{
+					this._LineApprove_MemoId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LineApprove_Seq", DbType="Int")]
+		public System.Nullable<int> LineApprove_Seq
+		{
+			get
+			{
+				return this._LineApprove_Seq;
+			}
+			set
+			{
+				if ((this._LineApprove_Seq != value))
+				{
+					this._LineApprove_Seq = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LineApprove_EmployeeId", DbType="Int")]
+		public System.Nullable<int> LineApprove_EmployeeId
+		{
+			get
+			{
+				return this._LineApprove_EmployeeId;
+			}
+			set
+			{
+				if ((this._LineApprove_EmployeeId != value))
+				{
+					this._LineApprove_EmployeeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LineApprove_EmployeeCode", DbType="NVarChar(10)")]
+		public string LineApprove_EmployeeCode
+		{
+			get
+			{
+				return this._LineApprove_EmployeeCode;
+			}
+			set
+			{
+				if ((this._LineApprove_EmployeeCode != value))
+				{
+					this._LineApprove_EmployeeCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LineApprove_NameTh", DbType="NVarChar(500)")]
+		public string LineApprove_NameTh
+		{
+			get
+			{
+				return this._LineApprove_NameTh;
+			}
+			set
+			{
+				if ((this._LineApprove_NameTh != value))
+				{
+					this._LineApprove_NameTh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LineApprove_NameEn", DbType="NVarChar(500)")]
+		public string LineApprove_NameEn
+		{
+			get
+			{
+				return this._LineApprove_NameEn;
+			}
+			set
+			{
+				if ((this._LineApprove_NameEn != value))
+				{
+					this._LineApprove_NameEn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LineApprove_PositionTH", DbType="NVarChar(500)")]
+		public string LineApprove_PositionTH
+		{
+			get
+			{
+				return this._LineApprove_PositionTH;
+			}
+			set
+			{
+				if ((this._LineApprove_PositionTH != value))
+				{
+					this._LineApprove_PositionTH = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LineApprove_PositionEN", DbType="NVarChar(500)")]
+		public string LineApprove_PositionEN
+		{
+			get
+			{
+				return this._LineApprove_PositionEN;
+			}
+			set
+			{
+				if ((this._LineApprove_PositionEN != value))
+				{
+					this._LineApprove_PositionEN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LineApprove_SignatureId", DbType="Int")]
+		public System.Nullable<int> LineApprove_SignatureId
+		{
+			get
+			{
+				return this._LineApprove_SignatureId;
+			}
+			set
+			{
+				if ((this._LineApprove_SignatureId != value))
+				{
+					this._LineApprove_SignatureId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LineApprove_SignatureTh", DbType="NVarChar(500)")]
+		public string LineApprove_SignatureTh
+		{
+			get
+			{
+				return this._LineApprove_SignatureTh;
+			}
+			set
+			{
+				if ((this._LineApprove_SignatureTh != value))
+				{
+					this._LineApprove_SignatureTh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LineApprove_SignatureEn", DbType="NVarChar(500)")]
+		public string LineApprove_SignatureEn
+		{
+			get
+			{
+				return this._LineApprove_SignatureEn;
+			}
+			set
+			{
+				if ((this._LineApprove_SignatureEn != value))
+				{
+					this._LineApprove_SignatureEn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LineApprove_IsActive", DbType="Bit")]
+		public System.Nullable<bool> LineApprove_IsActive
+		{
+			get
+			{
+				return this._LineApprove_IsActive;
+			}
+			set
+			{
+				if ((this._LineApprove_IsActive != value))
+				{
+					this._LineApprove_IsActive = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LineApprove_AccountId", DbType="Int")]
+		public System.Nullable<int> LineApprove_AccountId
+		{
+			get
+			{
+				return this._LineApprove_AccountId;
+			}
+			set
+			{
+				if ((this._LineApprove_AccountId != value))
+				{
+					this._LineApprove_AccountId = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ViewRole")]
+	public partial class ViewRole
+	{
+		
+		private int _RoleId;
+		
+		private string _RoleNameTh;
+		
+		private string _RoleNameEn;
+		
+		private System.Nullable<int> _EmployeeId;
+		
+		private string _EmpNameEn;
+		
+		private string _EmpNameTh;
+		
+		private System.Nullable<int> _Seq;
+		
+		public ViewRole()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoleId", DbType="Int NOT NULL")]
+		public int RoleId
+		{
+			get
+			{
+				return this._RoleId;
+			}
+			set
+			{
+				if ((this._RoleId != value))
+				{
+					this._RoleId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoleNameTh", DbType="NVarChar(500)")]
+		public string RoleNameTh
+		{
+			get
+			{
+				return this._RoleNameTh;
+			}
+			set
+			{
+				if ((this._RoleNameTh != value))
+				{
+					this._RoleNameTh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoleNameEn", DbType="NVarChar(500)")]
+		public string RoleNameEn
+		{
+			get
+			{
+				return this._RoleNameEn;
+			}
+			set
+			{
+				if ((this._RoleNameEn != value))
+				{
+					this._RoleNameEn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeId", DbType="Int")]
+		public System.Nullable<int> EmployeeId
+		{
+			get
+			{
+				return this._EmployeeId;
+			}
+			set
+			{
+				if ((this._EmployeeId != value))
+				{
+					this._EmployeeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpNameEn", DbType="NVarChar(500)")]
+		public string EmpNameEn
+		{
+			get
+			{
+				return this._EmpNameEn;
+			}
+			set
+			{
+				if ((this._EmpNameEn != value))
+				{
+					this._EmpNameEn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpNameTh", DbType="NVarChar(500)")]
+		public string EmpNameTh
+		{
+			get
+			{
+				return this._EmpNameTh;
+			}
+			set
+			{
+				if ((this._EmpNameTh != value))
+				{
+					this._EmpNameTh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Seq", DbType="Int")]
+		public System.Nullable<int> Seq
+		{
+			get
+			{
+				return this._Seq;
+			}
+			set
+			{
+				if ((this._Seq != value))
+				{
+					this._Seq = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ViewRolePermission")]
+	public partial class ViewRolePermission
+	{
+		
+		private int _MenuId;
+		
+		private string _NameTh;
+		
+		private string _NameEn;
+		
+		private string _MenuDescription;
+		
+		private System.Nullable<bool> _IsActive;
+		
+		private System.Nullable<bool> _IsCreate;
+		
+		private System.Nullable<bool> _IsEdit;
+		
+		private System.Nullable<bool> _IsDelete;
+		
+		private System.Nullable<bool> _IsView;
+		
+		private System.Nullable<int> _RoleId;
+		
+		private System.Nullable<int> _AccountId;
+		
+		private System.Nullable<bool> _CheckedCreate;
+		
+		private System.Nullable<bool> _CheckedEdit;
+		
+		private System.Nullable<bool> _CheckedDelete;
+		
+		private System.Nullable<bool> _CheckedView;
+		
+		public ViewRolePermission()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MenuId", DbType="Int NOT NULL")]
+		public int MenuId
+		{
+			get
+			{
+				return this._MenuId;
+			}
+			set
+			{
+				if ((this._MenuId != value))
+				{
+					this._MenuId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NameTh", DbType="NVarChar(500)")]
+		public string NameTh
+		{
+			get
+			{
+				return this._NameTh;
+			}
+			set
+			{
+				if ((this._NameTh != value))
+				{
+					this._NameTh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NameEn", DbType="NVarChar(500)")]
+		public string NameEn
+		{
+			get
+			{
+				return this._NameEn;
+			}
+			set
+			{
+				if ((this._NameEn != value))
+				{
+					this._NameEn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MenuDescription", DbType="NVarChar(1000)")]
+		public string MenuDescription
+		{
+			get
+			{
+				return this._MenuDescription;
+			}
+			set
+			{
+				if ((this._MenuDescription != value))
+				{
+					this._MenuDescription = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsActive", DbType="Bit")]
+		public System.Nullable<bool> IsActive
+		{
+			get
+			{
+				return this._IsActive;
+			}
+			set
+			{
+				if ((this._IsActive != value))
+				{
+					this._IsActive = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsCreate", DbType="Bit")]
+		public System.Nullable<bool> IsCreate
+		{
+			get
+			{
+				return this._IsCreate;
+			}
+			set
+			{
+				if ((this._IsCreate != value))
+				{
+					this._IsCreate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsEdit", DbType="Bit")]
+		public System.Nullable<bool> IsEdit
+		{
+			get
+			{
+				return this._IsEdit;
+			}
+			set
+			{
+				if ((this._IsEdit != value))
+				{
+					this._IsEdit = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsDelete", DbType="Bit")]
+		public System.Nullable<bool> IsDelete
+		{
+			get
+			{
+				return this._IsDelete;
+			}
+			set
+			{
+				if ((this._IsDelete != value))
+				{
+					this._IsDelete = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsView", DbType="Bit")]
+		public System.Nullable<bool> IsView
+		{
+			get
+			{
+				return this._IsView;
+			}
+			set
+			{
+				if ((this._IsView != value))
+				{
+					this._IsView = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoleId", DbType="Int")]
+		public System.Nullable<int> RoleId
+		{
+			get
+			{
+				return this._RoleId;
+			}
+			set
+			{
+				if ((this._RoleId != value))
+				{
+					this._RoleId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountId", DbType="Int")]
+		public System.Nullable<int> AccountId
+		{
+			get
+			{
+				return this._AccountId;
+			}
+			set
+			{
+				if ((this._AccountId != value))
+				{
+					this._AccountId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CheckedCreate", DbType="Bit")]
+		public System.Nullable<bool> CheckedCreate
+		{
+			get
+			{
+				return this._CheckedCreate;
+			}
+			set
+			{
+				if ((this._CheckedCreate != value))
+				{
+					this._CheckedCreate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CheckedEdit", DbType="Bit")]
+		public System.Nullable<bool> CheckedEdit
+		{
+			get
+			{
+				return this._CheckedEdit;
+			}
+			set
+			{
+				if ((this._CheckedEdit != value))
+				{
+					this._CheckedEdit = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CheckedDelete", DbType="Bit")]
+		public System.Nullable<bool> CheckedDelete
+		{
+			get
+			{
+				return this._CheckedDelete;
+			}
+			set
+			{
+				if ((this._CheckedDelete != value))
+				{
+					this._CheckedDelete = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CheckedView", DbType="Bit")]
+		public System.Nullable<bool> CheckedView
+		{
+			get
+			{
+				return this._CheckedView;
+			}
+			set
+			{
+				if ((this._CheckedView != value))
+				{
+					this._CheckedView = value;
+				}
 			}
 		}
 	}

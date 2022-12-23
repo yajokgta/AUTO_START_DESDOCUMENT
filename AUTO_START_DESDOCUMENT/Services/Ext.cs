@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using AUTO_START_DESDOCUMENT.Models;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -550,6 +552,67 @@ namespace AUTO_START_DESDOCUMENT.Services
                 }
                 return listBoxLayout;
             }
+        }
+        public static string ReplaceDataProcessCAR(string DestAdvanceForm, List<DataListTRNMemo> lstValue)
+        {
+
+            List<JObject> jsonAdvanceFormList = new List<JObject>();
+            JObject jsonAdvanceForm = JsonUtils.createJsonObject(DestAdvanceForm);
+            JArray itemsArray = (JArray)jsonAdvanceForm["items"];
+            foreach (JObject jItems in itemsArray)
+            {
+                JArray jLayoutArray = (JArray)jItems["layout"];
+
+                if (jLayoutArray.Count >= 1)
+                {
+                    JObject jTemplateL = (JObject)jLayoutArray[0]["template"];
+
+                    if ((String)jTemplateL["label"] == "ตารางรายการเอกสาร")
+                    {
+                        JObject jData = (JObject)jLayoutArray[0]["data"];
+                        if (jData != null)
+                        {
+
+                            JArray DataInsert = new JArray();
+
+                            jData["row"] = DataInsert;
+                            jData.Remove("row");
+                            string value = string.Empty;
+                            foreach (var item in lstValue)
+                            {
+                                value += (value == string.Empty ? "[" : ",") + "[{\"value\":\"" + item.DocumentCode + "\"},{\"value\":\""+ item.TemplateName + "\"},{\"value\":\"" + item.Department + "\"},{\"value\":\"" + item.DocumentCodeRunning + "\"},{\"value\":\"" + item.Subject + "\"}]";
+                            }
+
+                            value += "]";
+
+                            jData.Add("row", JArray.Parse(value));
+                        }
+                    }
+                    if (jLayoutArray.Count > 1)
+                    {
+                        JObject jTemplateR = (JObject)jLayoutArray[1]["template"];
+
+                        if ((String)jTemplateR["label"] == "ตารางรายการเอกสาร")
+                        {
+                            JObject jData = (JObject)jLayoutArray[1]["data"];
+                            if (jData != null)
+                            {
+                                JArray DataInsert = new JArray();
+                                jData["row"] = DataInsert;
+                                jData.Remove("row");
+                                string value = string.Empty;
+                                foreach (var item in lstValue)
+                                {
+                                    value += (value == string.Empty ? "[" : ",") + "[{\"value\":\"รหัสประเภทเอกสาร : " + item.DocumentCode + "\"},{\"value\":\"ชื่อแบบฟอร์ม : " + item.TemplateName + "\"},{\"value\":\"\"}]";
+                                }
+                                value += "]";
+                                jData.Add("row", JArray.Parse(value));
+                            }
+                        }
+                    }
+                }
+            }
+            return JsonConvert.SerializeObject(jsonAdvanceForm);
         }
     }
 }
