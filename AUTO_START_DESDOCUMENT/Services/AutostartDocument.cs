@@ -68,7 +68,7 @@ namespace AUTO_START_DESDOCUMENT.Services
             /*int StorageperiodInt = 1;*/
             int daysInOneYear = 365;
             int TotalDay = StorageperiodInt * daysInOneYear;
-            DateTime dt = DateTime.ParseExact(ValueInMadvanceListLast.EffectiveDate.ToString("dd/MM/yyyy"), "dd/MM/yyyy", null);
+            DateTime dt = DateTime.Now.Date;
             /*DateTime DatimeTotal =  dt.AddYears(-StorageperiodInt);*/
             var TempleteDest = db.MSTTemplates.Where(x => x.DocumentCode == documentcode && x.IsActive == true).ToList();
             var TempleteDestLast = TempleteDest.Last();
@@ -77,7 +77,7 @@ namespace AUTO_START_DESDOCUMENT.Services
 
             List<TRNMemo> ObjTrnmemos = TrnmemoDest.Where(obj =>
             {
-                TimeSpan difference = (TimeSpan)(obj.ModifiedDate - dt);
+                TimeSpan difference = (TimeSpan)(dt - obj.ModifiedDate);
                 return difference.TotalDays >= TotalDay;
             }).ToList();
 
