@@ -31,6 +31,10 @@ namespace AUTO_START_DESDOCUMENT.Services
                 db.Connection.Close();
                 db.Connection.Open();
             }
+            else 
+            {
+                db.Connection.Open();
+            }
             List<CustomJsonAdvanceForm.BoxLayout_RefDoc> tempMAdvanceFormItem = new List<CustomJsonAdvanceForm.BoxLayout_RefDoc>();
             List<TRNMemo> listTrnMemoDARN = new List<TRNMemo>();
             List<InfomationDARN> ValueInMadvanceList = new List<InfomationDARN>();
@@ -68,7 +72,8 @@ namespace AUTO_START_DESDOCUMENT.Services
             /*int StorageperiodInt = 1;*/
             int daysInOneYear = 365;
             int TotalDay = StorageperiodInt * daysInOneYear;
-            DateTime dt = DateTime.ParseExact(ValueInMadvanceListLast.EffectiveDate.ToString("dd/MM/yyyy"), "dd/MM/yyyy", null);
+            /*DateTime dt = DateTime.ParseExact(ValueInMadvanceListLast.EffectiveDate.ToString("dd/MM/yyyy"), "dd/MM/yyyy", null);*/
+            DateTime dt = DateTime.Now.Date;
             /*DateTime DatimeTotal =  dt.AddYears(-StorageperiodInt);*/
             var TempleteDest = db.MSTTemplates.Where(x => x.DocumentCode == documentcode && x.IsActive == true).ToList();
             var TempleteDestLast = TempleteDest.Last();
@@ -77,7 +82,7 @@ namespace AUTO_START_DESDOCUMENT.Services
 
             List<TRNMemo> ObjTrnmemos = TrnmemoDest.Where(obj =>
             {
-                TimeSpan difference = (TimeSpan)(obj.ModifiedDate - dt);
+                TimeSpan difference = (TimeSpan)(dt - obj.ModifiedDate);
                 return difference.TotalDays >= TotalDay;
             }).ToList();
 
