@@ -31,6 +31,10 @@ namespace AUTO_START_DESDOCUMENT.Services
                 db.Connection.Close();
                 db.Connection.Open();
             }
+            else
+            {
+                db.Connection.Open();
+            }
             List<CustomJsonAdvanceForm.BoxLayout_RefDoc> tempMAdvanceFormItem = new List<CustomJsonAdvanceForm.BoxLayout_RefDoc>();
             List<TRNMemo> listTrnMemoDARN = new List<TRNMemo>();
             List<InfomationDARN> ValueInMadvanceList = new List<InfomationDARN>();

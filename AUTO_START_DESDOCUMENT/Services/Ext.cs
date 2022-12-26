@@ -580,7 +580,7 @@ namespace AUTO_START_DESDOCUMENT.Services
                             string value = string.Empty;
                             foreach (var item in lstValue)
                             {
-                                value += (value == string.Empty ? "[" : ",") + "[{\"value\":\"" + item.DocumentCode + "\"},{\"value\":\""+ item.TemplateName + "\"},{\"value\":\"" + item.Department + "\"},{\"value\":\"" + item.DocumentCodeRunning + "\"},{\"value\":\"" + item.Subject + "\"}]";
+                                value += (value == string.Empty ? "[" : ",") + "[{\"value\":\"" + item.DocumentCode + "\"},{\"value\":\"" + item.TemplateName + "\"},{\"value\":\"" + item.Department + "\"},{\"value\":\"" + item.DocumentCodeRunning + "\"},{\"value\":\"" + item.Subject + "\"}]";
                             }
 
                             value += "]";
@@ -603,7 +603,7 @@ namespace AUTO_START_DESDOCUMENT.Services
                                 string value = string.Empty;
                                 foreach (var item in lstValue)
                                 {
-                                    value += (value == string.Empty ? "[" : ",") + "[{\"value\":\"รหัสประเภทเอกสาร : " + item.DocumentCode + "\"},{\"value\":\"ชื่อแบบฟอร์ม : " + item.TemplateName + "\"},{\"value\":\"\"}]";
+                                    value += (value == string.Empty ? "[" : ",") + "[{\"value\":\"" + item.DocumentCode + "\"},{\"value\":\"" + item.TemplateName + "\"},{\"value\":\"" + item.Department + "\"},{\"value\":\"" + item.DocumentCodeRunning + "\"},{\"value\":\"" + item.Subject + "\"}]";
                                 }
                                 value += "]";
                                 jData.Add("row", JArray.Parse(value));
