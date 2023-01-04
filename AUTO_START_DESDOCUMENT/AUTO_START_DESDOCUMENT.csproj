@@ -69,6 +69,7 @@
     <Compile Include="Services\Ext.cs" />
     <Compile Include="Services\GenControlRunning.cs" />
     <Compile Include="Services\GetlineApprove.cs" />
+    <Compile Include="Services\WriteLogFile.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

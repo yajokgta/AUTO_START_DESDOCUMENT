@@ -40,6 +40,8 @@ namespace AUTO_START_DESDOCUMENT.Services
             List<InfomationDARN> ValueInMadvanceList = new List<InfomationDARN>();
             List<TRNMemo> listTrnMemoDest = new List<TRNMemo>();
             var msttemplete = db.MSTTemplates.Where(x => x.DocumentCode == "DAR-N" || x.DocumentCode == "DAR-E" && x.IsActive == true).ToList();
+            Console.WriteLine("MSTTemplate : "+ msttemplete.Count);
+            WriteLogFile.writeLogFile("MSTTemplate : " + msttemplete.Count);
             List<string> SelectTemp = msttemplete.Select(x => x.TemplateId.ToString()).ToList();
             var trnmemo = db.TRNMemos.Where(x => SelectTemp.Contains(x.TemplateId.ToString())).ToList();
             foreach (var ItemMemo in trnmemo)
@@ -49,6 +51,8 @@ namespace AUTO_START_DESDOCUMENT.Services
                     listTrnMemoDARN.Add(ItemMemo);
                 }
             }
+            Console.WriteLine("listTrnMemoDARN||DARE : " + listTrnMemoDARN.Count);
+            WriteLogFile.writeLogFile("listTrnMemoDARN||DARE : " + listTrnMemoDARN.Count);
             foreach (var objlistmemodarn in listTrnMemoDARN)
             {
                 InfomationDARN GetValue = new InfomationDARN();
@@ -63,9 +67,13 @@ namespace AUTO_START_DESDOCUMENT.Services
                     {
                         GetValue.Storageperiod = tempItem.Box_Control_Value;
                     }
-                }
+                }   
                 ValueInMadvanceList.Add(GetValue);
             }
+            ValueInMadvanceList.ForEach(x => Console.WriteLine("EffectiveDate : " + x.EffectiveDate));
+            ValueInMadvanceList.ForEach(x => Console.WriteLine("Storageperiod : " + x.Storageperiod));
+            ValueInMadvanceList.ForEach(x => WriteLogFile.writeLogFile("EffectiveDate : " + x.EffectiveDate));
+            ValueInMadvanceList.ForEach(x => WriteLogFile.writeLogFile("Storageperiod : " + x.Storageperiod));
             ValueInMadvanceList = ValueInMadvanceList.OrderBy(x => x.EffectiveDate).ToList();
             var ValueInMadvanceListLast = ValueInMadvanceList.Last();
             int StorageperiodInt = Convert.ToInt32(ValueInMadvanceListLast.Storageperiod);
@@ -101,6 +109,8 @@ namespace AUTO_START_DESDOCUMENT.Services
                 GetValueToTable.MemoID = objtrnmemodest.MemoId.ToString();
                 ListToTable.Add(GetValueToTable);
             }
+            ListToTable.ForEach(x => Console.WriteLine("ListToTable : " + x.DocumentCode));
+            ListToTable.ForEach(x => WriteLogFile.writeLogFile("ListToTable : " + x.DocumentCode));
             var DestinationTemplate = db.MSTTemplates.Where(x => x.DocumentCode == "FM-บันทึกคุณภาพ" && x.IsActive == true).ToList();
             var DestinationTemplateLast = DestinationTemplate.LastOrDefault();
             string strMAdvance = Ext.ReplaceDataProcessCAR(DestinationTemplateLast.AdvanceForm, ListToTable);
