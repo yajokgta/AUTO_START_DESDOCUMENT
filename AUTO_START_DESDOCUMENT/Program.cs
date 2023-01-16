@@ -11,7 +11,7 @@ namespace AUTO_START_DESDOCUMENT
     {
         static void Main(string[] args)
         {
-            Console.BackgroundColor = ConsoleColor.Green;
+            Console.ForegroundColor= ConsoleColor.Green;
             AutostartDocument.StartDoc();
         }
     }
