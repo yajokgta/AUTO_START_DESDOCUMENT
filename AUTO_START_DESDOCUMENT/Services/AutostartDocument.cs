@@ -35,13 +35,16 @@ namespace AUTO_START_DESDOCUMENT.Services
             {
                 db.Connection.Open();
             }
+
             List<CustomJsonAdvanceForm.BoxLayout_RefDoc> tempMAdvanceFormItem = new List<CustomJsonAdvanceForm.BoxLayout_RefDoc>();
             List<TRNMemo> listTrnMemoDARN = new List<TRNMemo>();
             List<InfomationDARN> ValueInMadvanceList = new List<InfomationDARN>();
             List<TRNMemo> listTrnMemoDest = new List<TRNMemo>();
-            var msttemplete = db.MSTTemplates.Where(x => x.DocumentCode == "DAR-N" || x.DocumentCode == "DAR-E" && x.IsActive == true).ToList();
+            var msttemplete = db.MSTTemplates.Where(x => x.DocumentCode == "DAR-N" || x.DocumentCode == "DAR-E").ToList();
+
             Console.WriteLine("MSTTemplate : "+ msttemplete.Count);
             WriteLogFile.writeLogFile("MSTTemplate : " + msttemplete.Count);
+
             List<string> SelectTemp = msttemplete.Select(x => x.TemplateId.ToString()).ToList();
             var trnmemo = db.TRNMemos.Where(x => SelectTemp.Contains(x.TemplateId.ToString())).ToList();
             foreach (var ItemMemo in trnmemo)
@@ -51,8 +54,13 @@ namespace AUTO_START_DESDOCUMENT.Services
                     listTrnMemoDARN.Add(ItemMemo);
                 }
             }
+
             Console.WriteLine("listTrnMemoDARN||DARE : " + listTrnMemoDARN.Count);
             WriteLogFile.writeLogFile("listTrnMemoDARN||DARE : " + listTrnMemoDARN.Count);
+
+            listTrnMemoDARN.ForEach(obj => WriteLogFile.writeLogFile(obj.MemoId.ToString()));
+            listTrnMemoDARN.ForEach(obj => Console.WriteLine(obj.MemoId));
+
             foreach (var objlistmemodarn in listTrnMemoDARN)
             {
                 InfomationDARN GetValue = new InfomationDARN();
@@ -70,22 +78,31 @@ namespace AUTO_START_DESDOCUMENT.Services
                 }   
                 ValueInMadvanceList.Add(GetValue);
             }
+
             ValueInMadvanceList.ForEach(x => Console.WriteLine("EffectiveDate : " + x.EffectiveDate));
             ValueInMadvanceList.ForEach(x => Console.WriteLine("Storageperiod : " + x.Storageperiod));
             ValueInMadvanceList.ForEach(x => WriteLogFile.writeLogFile("EffectiveDate : " + x.EffectiveDate));
             ValueInMadvanceList.ForEach(x => WriteLogFile.writeLogFile("Storageperiod : " + x.Storageperiod));
+
             ValueInMadvanceList = ValueInMadvanceList.OrderBy(x => x.EffectiveDate).ToList();
             var ValueInMadvanceListLast = ValueInMadvanceList.Last();
             int StorageperiodInt = Convert.ToInt32(ValueInMadvanceListLast.Storageperiod);
+
             /*int StorageperiodInt = 1;*/
             int daysInOneYear = 365;
             int TotalDay = StorageperiodInt * daysInOneYear;
             DateTime dt = DateTime.Now.Date;
             /*DateTime DatimeTotal =  dt.AddYears(-StorageperiodInt);*/
-            var TempleteDest = db.MSTTemplates.Where(x => x.DocumentCode == documentcode && x.IsActive == true).ToList();
+            List<string> doucumentcodeSplit = documentcode.Split('|').ToList();
+            var TempleteDest = db.MSTTemplates.Where(x => doucumentcodeSplit.Contains(x.DocumentCode)).ToList();
             var TempleteDestLast = TempleteDest.Last();
-            var TrnmemoDest = db.TRNMemos.Where(x => x.TemplateId == TempleteDestLast.TemplateId && x.StatusName.ToLower() == "completed").ToList();
+
+            List<string> SelectTempDest = TempleteDest.Select(x => x.TemplateId.ToString()).ToList();
+            var TrnmemoDest = db.TRNMemos.Where(x => SelectTempDest.Contains(x.TemplateId.ToString()) && x.StatusName.ToLower() == "completed").ToList();
             TrnmemoDest.OrderBy(x=> x.ModifiedDate).ToList();
+
+            TrnmemoDest.ForEach(obj => Console.WriteLine("Template ID : " + obj.MemoId));
+            TrnmemoDest.ForEach(obj => WriteLogFile.writeLogFile("Template ID : " + obj.MemoId.ToString()));
 
             List<TRNMemo> ObjTrnmemos = TrnmemoDest.Where(obj =>
             {
@@ -93,13 +110,16 @@ namespace AUTO_START_DESDOCUMENT.Services
                 return difference.TotalDays >= TotalDay;
             }).ToList();
 
+            ObjTrnmemos.ForEach(obj => Console.WriteLine(obj.MemoId));
+            ObjTrnmemos.ForEach(obj => WriteLogFile.writeLogFile(obj.MemoId.ToString()));
             var emplist = db.ViewEmployees.Where(x => x.Email == EmailCreater).ToList();
             var EmployeeMaster = emplist.FirstOrDefault();
             List<DataListTRNMemo> ListToTable = new List<DataListTRNMemo>();
             var lstCompany = db.MSTCompanies.ToList();
+
             foreach (var objtrnmemodest in ObjTrnmemos)
             {
-                var GetDocumentCodeByTempID = db.MSTTemplates.Where(x => x.TemplateId == objtrnmemodest.TemplateId && x.IsActive == true).ToList().FirstOrDefault();
+                var GetDocumentCodeByTempID = db.MSTTemplates.Where(x => x.TemplateId == objtrnmemodest.TemplateId).ToList().FirstOrDefault();
                 DataListTRNMemo GetValueToTable = new DataListTRNMemo();
                 GetValueToTable.DocumentCode = GetDocumentCodeByTempID.DocumentCode;
                 GetValueToTable.TemplateName = objtrnmemodest.TemplateName;
@@ -109,11 +129,14 @@ namespace AUTO_START_DESDOCUMENT.Services
                 GetValueToTable.MemoID = objtrnmemodest.MemoId.ToString();
                 ListToTable.Add(GetValueToTable);
             }
-            ListToTable.ForEach(x => Console.WriteLine("ListToTable : " + x.DocumentCode));
-            ListToTable.ForEach(x => WriteLogFile.writeLogFile("ListToTable : " + x.DocumentCode));
+
+            ListToTable.ForEach(x => Console.WriteLine("ListToTable : " + x.DocumentCodeRunning));
+            ListToTable.ForEach(x => WriteLogFile.writeLogFile("ListToTable : " + x.DocumentCodeRunning));
+
             var DestinationTemplate = db.MSTTemplates.Where(x => x.DocumentCode == "FM-บันทึกคุณภาพ" && x.IsActive == true).ToList();
             var DestinationTemplateLast = DestinationTemplate.LastOrDefault();
             string strMAdvance = Ext.ReplaceDataProcessCAR(DestinationTemplateLast.AdvanceForm, ListToTable);
+
             List<ApprovalDetail> LineApprove = GetlineApprove.GetLineapprove(EmployeeMaster);
             TRNMemo objMemo = new TRNMemo();
             objMemo.StatusName = "Wait for Approve";
@@ -182,6 +205,8 @@ namespace AUTO_START_DESDOCUMENT.Services
             objMemo.PersonWaiting = LineApprove.First().approver.NameTh;
             db.SubmitChanges();
             db.Connection.Close();
+            Console.WriteLine("Create Memo Success");
+            WriteLogFile.writeLogFile("Create Memo Success");
         }
     }
 }

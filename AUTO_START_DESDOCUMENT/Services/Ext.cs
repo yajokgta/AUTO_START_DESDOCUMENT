@@ -582,9 +582,7 @@ namespace AUTO_START_DESDOCUMENT.Services
                             {
                                 value += (value == string.Empty ? "[" : ",") + "[{\"value\":\"" + item.DocumentCode + "\"},{\"value\":\"" + item.TemplateName + "\"},{\"value\":\"" + item.Department + "\"},{\"value\":\"" + item.DocumentCodeRunning + "\"},{\"value\":\"" + item.Subject + "\"}]";
                             }
-
                             value += "]";
-
                             jData.Add("row", JArray.Parse(value));
                         }
                     }
