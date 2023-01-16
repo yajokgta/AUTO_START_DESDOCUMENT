@@ -86,12 +86,12 @@ namespace AUTO_START_DESDOCUMENT.Services
 
             ValueInMadvanceList = ValueInMadvanceList.OrderBy(x => x.EffectiveDate).ToList();
             var ValueInMadvanceListLast = ValueInMadvanceList.Last();
-            int StorageperiodInt = Convert.ToInt32(ValueInMadvanceListLast.Storageperiod);
+            /*int StorageperiodInt = Convert.ToInt32(ValueInMadvanceListLast.Storageperiod);*/
 
-            /*int StorageperiodInt = 1;*/
+            int StorageperiodInt = 1;
             int daysInOneYear = 365;
             int TotalDay = StorageperiodInt * daysInOneYear;
-            DateTime dt = DateTime.Now.Date;
+            DateTime dt = Convert.ToDateTime("01/10/2023");
             /*DateTime DatimeTotal =  dt.AddYears(-StorageperiodInt);*/
             List<string> doucumentcodeSplit = documentcode.Split('|').ToList();
             var TempleteDest = db.MSTTemplates.Where(x => doucumentcodeSplit.Contains(x.DocumentCode)).ToList();
