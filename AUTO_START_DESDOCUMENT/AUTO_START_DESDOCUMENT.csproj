@@ -45,8 +45,11 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="WolfApprove.API2">
+      <HintPath>..\..\..\..\..\..\..\AllProject\wolfapprove\WolfApprove\WolfApprove.API2\bin\WolfApprove.API2.dll</HintPath>
+    </Reference>
     <Reference Include="WolfApprove.Model">
-      <HintPath>D:\Allproject\wolfapprove\WolfApprove\WolfApprove.API2\bin\WolfApprove.Model.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\AllProject\wolfapprove\WolfApprove\WolfApprove.API2\bin\WolfApprove.Model.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

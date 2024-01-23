@@ -577,12 +577,26 @@ namespace AUTO_START_DESDOCUMENT.Services
 
                             jData["row"] = DataInsert;
                             jData.Remove("row");
-                            string value = string.Empty;
+                            //string value = string.Empty;
+                            //foreach (var item in lstValue)
+                            //{
+                            //    value += (value == string.Empty ? "[" : ",") + "[{\"value\":\"" + item.DocumentCode + "\"},{\"value\":\"" + item.TemplateName + "\"},{\"value\":\"" + item.Department + "\"},{\"value\":\"" + item.DocumentCodeRunning + "\"},{\"value\":\"" + item.Subject + "\"}]";
+                            //}
+                            //value += "]";
+
+                            string value = "[";
+
                             foreach (var item in lstValue)
                             {
-                                value += (value == string.Empty ? "[" : ",") + "[{\"value\":\"" + item.DocumentCode + "\"},{\"value\":\"" + item.TemplateName + "\"},{\"value\":\"" + item.Department + "\"},{\"value\":\"" + item.DocumentCodeRunning + "\"},{\"value\":\"" + item.Subject + "\"}]";
+                                // Constructing JSON objects for each item in lstValue
+                                string itemJson = "{\"value\":\"" + item.DocumentCode + "\"},{\"value\":\"" + item.TemplateName + "\"},{\"value\":\"" + item.Department + "\"},{\"value\":\"" + item.DocumentCodeRunning + "\"},{\"value\":\"" + item.Subject + "\"}";
+
+                                // Adding a comma before each item except the first one
+                                value += (value == "[" ? "" : ",") + "[" + itemJson + "]";
                             }
+
                             value += "]";
+
                             jData.Add("row", JArray.Parse(value));
                         }
                     }
@@ -611,6 +625,60 @@ namespace AUTO_START_DESDOCUMENT.Services
                 }
             }
             return JsonConvert.SerializeObject(jsonAdvanceForm);
+        }
+        public static string getValueAdvanceForm(string AdvanceForm, string label)
+        {
+            string setValue = "";
+            JObject jsonAdvanceForm = JObject.Parse(AdvanceForm);
+            if (jsonAdvanceForm.ContainsKey("items"))
+            {
+                JArray itemsArray = (JArray)jsonAdvanceForm["items"];
+                foreach (JObject jItems in itemsArray)
+                {
+                    JArray jLayoutArray = (JArray)jItems["layout"];
+                    foreach (JToken jLayout in jLayoutArray)
+                    {
+                        JObject jTemplate = (JObject)jLayout["template"];
+                        var getLabel = (String)jTemplate["label"];
+                        if (label == getLabel)
+                        {
+                            JObject jdata = (JObject)jLayout["data"];
+                            if (jdata != null)
+                            {
+                                if (jdata["value"] != null) setValue = jdata["value"].ToString();
+                            }
+                            break;
+                        }
+                    }
+                }
+            }
+
+            return setValue;
+        }
+        public static DateTime convertDateTime(string targetDateTime)
+        {
+            DateTime dt = new DateTime();
+
+            List<string> strsplit = new List<string>();
+
+            if (targetDateTime.Contains(' '))
+            {
+                strsplit = targetDateTime.Split(' ').ToList();
+            }
+            else if (targetDateTime.Contains('/'))
+            {
+                strsplit = targetDateTime.Split('/').ToList();
+            }
+
+            if (strsplit[1].Length == 3)
+            {
+                dt = Convert.ToDateTime(targetDateTime);
+            }
+            else if (strsplit[1].Length == 2)
+            {
+                dt = DateTime.ParseExact(targetDateTime, "dd/MM/yyyy", null);
+            }
+            return dt;
         }
     }
 }
