@@ -99,7 +99,7 @@ namespace AUTO_START_DESDOCUMENT.Services
                 int StorageperiodInt = 1;
                 int daysInOneYear = 365;
                 int TotalDay = StorageperiodInt * daysInOneYear;
-                DateTime dt = Convert.ToDateTime("10/1/2567");
+                DateTime dt = Convert.ToDateTime("10/1/2568");
                 /*DateTime DatimeTotal =  dt.AddYears(-StorageperiodInt);*/
 
                 var TempleteDest = db.MSTTemplates.Where(x => doucumentcodeSplit.Contains(x.DocumentCode)).ToList();
@@ -216,8 +216,8 @@ namespace AUTO_START_DESDOCUMENT.Services
                 objMemo.PersonWaiting = LineApprove.First().approver.NameTh;
                 db.SubmitChanges();
                 db.Connection.Close();
-                Console.WriteLine("Create Memo Success");
-                WriteLogFile.writeLogFile("Create Memo Success");
+                Console.WriteLine("Create Memo Success MemoId : " + objMemo.MemoId);
+                WriteLogFile.writeLogFile("Create Memo Success MemoId : " + objMemo.MemoId);
             }
 
             catch (Exception ex)
