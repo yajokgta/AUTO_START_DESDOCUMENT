@@ -22,7 +22,7 @@ namespace AUTO_START_DESDOCUMENT
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="WolfApproveCore.ISO")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="WolfApproveCore.QAR2")]
 	public partial class ISODBContextDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -138,7 +138,7 @@ namespace AUTO_START_DESDOCUMENT
     #endregion
 		
 		public ISODBContextDataContext() : 
-				base(global::AUTO_START_DESDOCUMENT.Properties.Settings.Default.WolfApproveCore_ISOConnectionString, mappingSource)
+				base(global::AUTO_START_DESDOCUMENT.Properties.Settings.Default.WolfApproveCore_QAR2ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -524,6 +524,14 @@ namespace AUTO_START_DESDOCUMENT
 			get
 			{
 				return this.GetTable<ViewRolePermission>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TRNMemoForm> TRNMemoForms
+		{
+			get
+			{
+				return this.GetTable<TRNMemoForm>();
 			}
 		}
 	}
@@ -19727,6 +19735,339 @@ namespace AUTO_START_DESDOCUMENT
 				if ((this._CheckedView != value))
 				{
 					this._CheckedView = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TRNMemoForm")]
+	public partial class TRNMemoForm
+	{
+		
+		private int _Id;
+		
+		private System.Nullable<int> _MemoId;
+		
+		private System.Nullable<int> _TemplateId;
+		
+		private string _obj_type;
+		
+		private string _obj_label;
+		
+		private string _obj_attr;
+		
+		private string _obj_desc;
+		
+		private string _obj_value;
+		
+		private System.Nullable<int> _row_index;
+		
+		private System.Nullable<int> _row_count;
+		
+		private System.Nullable<int> _col_index;
+		
+		private string _col_label;
+		
+		private string _col_desc;
+		
+		private string _col_value;
+		
+		private string _row_value;
+		
+		private string _obj_column;
+		
+		private string _obj_items;
+		
+		private string _obj_value_item;
+		
+		public TRNMemoForm()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MemoId", DbType="Int")]
+		public System.Nullable<int> MemoId
+		{
+			get
+			{
+				return this._MemoId;
+			}
+			set
+			{
+				if ((this._MemoId != value))
+				{
+					this._MemoId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TemplateId", DbType="Int")]
+		public System.Nullable<int> TemplateId
+		{
+			get
+			{
+				return this._TemplateId;
+			}
+			set
+			{
+				if ((this._TemplateId != value))
+				{
+					this._TemplateId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_obj_type", DbType="NVarChar(MAX)")]
+		public string obj_type
+		{
+			get
+			{
+				return this._obj_type;
+			}
+			set
+			{
+				if ((this._obj_type != value))
+				{
+					this._obj_type = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_obj_label", DbType="NVarChar(MAX)")]
+		public string obj_label
+		{
+			get
+			{
+				return this._obj_label;
+			}
+			set
+			{
+				if ((this._obj_label != value))
+				{
+					this._obj_label = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_obj_attr", DbType="NVarChar(MAX)")]
+		public string obj_attr
+		{
+			get
+			{
+				return this._obj_attr;
+			}
+			set
+			{
+				if ((this._obj_attr != value))
+				{
+					this._obj_attr = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_obj_desc", DbType="NVarChar(MAX)")]
+		public string obj_desc
+		{
+			get
+			{
+				return this._obj_desc;
+			}
+			set
+			{
+				if ((this._obj_desc != value))
+				{
+					this._obj_desc = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_obj_value", DbType="NVarChar(MAX)")]
+		public string obj_value
+		{
+			get
+			{
+				return this._obj_value;
+			}
+			set
+			{
+				if ((this._obj_value != value))
+				{
+					this._obj_value = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_row_index", DbType="Int")]
+		public System.Nullable<int> row_index
+		{
+			get
+			{
+				return this._row_index;
+			}
+			set
+			{
+				if ((this._row_index != value))
+				{
+					this._row_index = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_row_count", DbType="Int")]
+		public System.Nullable<int> row_count
+		{
+			get
+			{
+				return this._row_count;
+			}
+			set
+			{
+				if ((this._row_count != value))
+				{
+					this._row_count = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_col_index", DbType="Int")]
+		public System.Nullable<int> col_index
+		{
+			get
+			{
+				return this._col_index;
+			}
+			set
+			{
+				if ((this._col_index != value))
+				{
+					this._col_index = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_col_label", DbType="NVarChar(MAX)")]
+		public string col_label
+		{
+			get
+			{
+				return this._col_label;
+			}
+			set
+			{
+				if ((this._col_label != value))
+				{
+					this._col_label = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_col_desc", DbType="NVarChar(MAX)")]
+		public string col_desc
+		{
+			get
+			{
+				return this._col_desc;
+			}
+			set
+			{
+				if ((this._col_desc != value))
+				{
+					this._col_desc = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_col_value", DbType="NVarChar(MAX)")]
+		public string col_value
+		{
+			get
+			{
+				return this._col_value;
+			}
+			set
+			{
+				if ((this._col_value != value))
+				{
+					this._col_value = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_row_value", DbType="NVarChar(MAX)")]
+		public string row_value
+		{
+			get
+			{
+				return this._row_value;
+			}
+			set
+			{
+				if ((this._row_value != value))
+				{
+					this._row_value = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_obj_column", DbType="NVarChar(MAX)")]
+		public string obj_column
+		{
+			get
+			{
+				return this._obj_column;
+			}
+			set
+			{
+				if ((this._obj_column != value))
+				{
+					this._obj_column = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_obj_items", DbType="NVarChar(MAX)")]
+		public string obj_items
+		{
+			get
+			{
+				return this._obj_items;
+			}
+			set
+			{
+				if ((this._obj_items != value))
+				{
+					this._obj_items = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_obj_value_item", DbType="NVarChar(MAX)")]
+		public string obj_value_item
+		{
+			get
+			{
+				return this._obj_value_item;
+			}
+			set
+			{
+				if ((this._obj_value_item != value))
+				{
+					this._obj_value_item = value;
 				}
 			}
 		}

@@ -272,5 +272,11 @@
         <elementListCompartment Id="510fed24-f3b2-4349-b4ff-d037fe14c6e5" absoluteBounds="24.39, 4.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="77860c96-0915-4979-944e-c508bf3b3676" absoluteBounds="1.5, 13.875, 2, 4.2708154296875">
+      <DataClassMoniker Name="/ISODBContextDataContext/TRNMemoForm" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a42c8989-7045-4350-ad56-ed33ce819725" absoluteBounds="1.5150000000000001, 14.335, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

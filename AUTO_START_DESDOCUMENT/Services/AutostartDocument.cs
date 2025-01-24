@@ -157,6 +157,7 @@ namespace AUTO_START_DESDOCUMENT.Services
                 objMemo.RequesterId = EmployeeMaster.EmployeeId;
                 objMemo.CNameTh = EmployeeMaster.NameTh;
                 objMemo.CNameEn = EmployeeMaster.NameEn;
+                objMemo.CurrentApprovalLevel = 1;
 
                 objMemo.CPositionId = EmployeeMaster.PositionId;
                 objMemo.CPositionTh = EmployeeMaster.PositionNameTh;
